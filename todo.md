@@ -11,6 +11,7 @@ TODO:
   - [ ] assess quality of the recordings
     - [ ] come up with data processing pipeline (cleaning, normalization, feature extraction etc.)
 - [ ] streamline repository setup after cloning
+  - [x] install necessary dependencies and create a requirements.txt file
   - [ ] create a script that will install train, dev and test sets (make sure they are place in .gitignore)
 - [ ] fine-tune existing asr model on one of the subsets (subdirectories) of the training set
   - [ ] find asr model on hugging face that is multilingual (supports Polish) and is relativaly small
