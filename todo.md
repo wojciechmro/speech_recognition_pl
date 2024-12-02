@@ -7,6 +7,7 @@ NOTE:
 TODO:
 
 - [wojtek] explore the BIGOS dataset
+  - [x] write script to extract an audio sample from the specified dataset
   - [ ] assess quality of the recordings
     - [ ] come up with data processing pipeline (cleaning, normalization, feature extraction etc.)
 - [ ] streamline repository setup after cloning
