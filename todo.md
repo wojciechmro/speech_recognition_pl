@@ -1,6 +1,8 @@
 NOTE:
 
-Assign yourself to a task by adding your name within the square brackets of a task. Mark done task with `x`.
+- Assign yourself to a task with `[your_name]`.
+- Mark done task with `[x]`.
+- Mark pending subtasks with `[.]`.
 
 TODO:
 
@@ -18,3 +20,6 @@ TODO:
     - [ ] check if the performance is better than before fine-tuning
 - [ ] repeat fine tuning on more data (maybe whole training set)
 - [ ] train asr model from scratch
+  - [ ] research possible architectures (focus on the simplicity of the model)
+  - [ ] train model using Kaggle notebooks for 12h of free GPU time (the notebook will keep running even if we shut down the browser)
+- [ ] compare the WER and CER metrics of the trained and fine-tuned models to the results of the contest
