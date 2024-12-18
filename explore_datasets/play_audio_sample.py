@@ -9,9 +9,8 @@ import soundfile as sf
 
 
 def extract_audio_sample_metadata(dataset_path, subdir, split, index):
-    dataset = load_dataset(path=dataset_path, name=subdir)
-    split = dataset[split]
-    record = split[index]
+    dataset = load_dataset(path=dataset_path, name=subdir, split=split)
+    record = dataset[index]
     ref_orig = record["ref_orig"]
     audio_array = record["audio"]["array"]
     sampling_rate = record["audio"]["sampling_rate"]
