@@ -21,3 +21,4 @@ Find task definition, datasets and evaluation metrics [here](https://beta.poleva
 - each task is marked for one day for simplicity
 - only order of tasks matters
 - tasks that can be done asynchronously have deadline for the same day
+- assign yourself to tasks
