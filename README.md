@@ -22,3 +22,4 @@ Find task definition, datasets and evaluation metrics [here](https://beta.poleva
 - only order of tasks matters
 - tasks that can be done asynchronously have deadline for the same day
 - assign yourself to tasks
+- append `(#<issue_number>)` to the commit message to link it to the task (see example commits using `git log`)
