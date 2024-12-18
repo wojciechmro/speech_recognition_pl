@@ -1,5 +1,6 @@
 # Run in Interactive Window to display interactive media player
 # Make sure you have the Jupyter Notebook extension installed
+# Alternatively, play `audio_out/sample.wav` directly
 
 import os
 from datasets import load_dataset
