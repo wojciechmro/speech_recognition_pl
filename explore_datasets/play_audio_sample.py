@@ -26,6 +26,12 @@ def save_audio_sample(audio_array, sampling_rate, file_path):
     sf.write(file=file_path, data=audio_array, samplerate=sampling_rate)
 
 
+def save_reference_text(text, file_path):
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    with open(file_path, "w") as f:
+        f.write(text)
+
+
 if __name__ == "__main__":
     audio_array, sampling_rate, ref_orig = extract_audio_sample_metadata(
         dataset_path="amu-cai/pl-asr-bigos-v2",
@@ -40,3 +46,6 @@ if __name__ == "__main__":
         file_path=os.path.join("audio_out", "sample.wav"),
     )
     print(f"Ground truth:\n{ref_orig}")
+    save_reference_text(
+        text=ref_orig, file_path=os.path.join("text_out", "transcription.txt")
+    )
