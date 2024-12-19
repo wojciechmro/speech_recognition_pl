@@ -1,7 +1,3 @@
-# Run in Interactive Window to display interactive media player
-# Make sure you have the Jupyter Notebook extension installed
-# Alternatively, play `audio_out/sample.wav` directly
-
 import os
 from datasets import load_dataset
 from IPython.display import Audio, display
@@ -33,19 +29,39 @@ def save_reference_text(text, file_path):
 
 
 if __name__ == "__main__":
+    # Metadata extraction on 1 sample
     audio_array, sampling_rate, ref_orig = extract_audio_sample_metadata(
         dataset_path="amu-cai/pl-asr-bigos-v2",
         subdir="pwr-azon_spont-20",
         split="train",
         index=0,
     )
-    play_audio_sample(audio_array=audio_array, sampling_rate=sampling_rate)
+    print(f"Ground truth for only 1 sample:\n{ref_orig}")
+    print("---")
     save_audio_sample(
         audio_array=audio_array,
         sampling_rate=sampling_rate,
         file_path=os.path.join("audio_out", "sample.wav"),
     )
-    print(f"Ground truth:\n{ref_orig}")
     save_reference_text(
         text=ref_orig, file_path=os.path.join("text_out", "transcription.txt")
     )
+
+    # Metadata extraction on 10 samples
+    for i in range(10):
+        audio_array, sampling_rate, ref_orig = extract_audio_sample_metadata(
+            dataset_path="amu-cai/pl-asr-bigos-v2",
+            subdir="pwr-azon_spont-20",
+            split="train",
+            index=i,
+        )
+        print(f"Ground truth for sample {i}:\n{ref_orig}")
+        save_audio_sample(
+            audio_array=audio_array,
+            sampling_rate=sampling_rate,
+            file_path=os.path.join("audio_out", "batch", f"sample_{i}.wav"),
+        )
+        save_reference_text(
+            text=ref_orig,
+            file_path=os.path.join("text_out", "batch", f"transcription_{i}.txt"),
+        )
