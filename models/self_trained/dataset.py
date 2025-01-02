@@ -5,7 +5,7 @@ from torch.nn.utils.rnn import pad_sequence
 import torch.nn.functional as F
 
 class ASRDataset(Dataset):
-    def __init__(self, dataset, vocab_dict, sample_rate=16000, n_mels=128):
+    def __init__(self, dataset, vocab_dict, sample_rate=16000, n_mels=80):
         self.dataset = dataset
         self.vocab_dict = vocab_dict
         self.mel_transform = T.MelSpectrogram(
