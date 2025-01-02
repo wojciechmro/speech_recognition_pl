@@ -2,19 +2,21 @@
 
 Develop a Polish ASR (Automatic Speech Recognition) system capable of transcribing spoken words into text.
 
-# Motivation
+### Motivation
 
 Solve the 3rd challange from the PolEval 2024 competition.
 
-# Task
+### Task
 
 Find task definition, datasets and evaluation metrics [here](https://beta.poleval.pl/challenge/2024-asr-bigos).
 
-# Deadline
+### Deadline
 
 11.01.2025
 
-# Division Of Labor
+# Notes
+
+### Division Of Labor
 
 [Roadmap of tasks](https://github.com/users/wojciechmro/projects/2/views/4)
 
@@ -23,3 +25,14 @@ Find task definition, datasets and evaluation metrics [here](https://beta.poleva
 - tasks that can be done asynchronously have deadline for the same day
 - assign yourself to tasks
 - append `(#<issue_number>)` to the commit message to link it to the task (see example commits using `git log`)
+
+### Pretrained ASR Models
+
+**Whisper**
+
+- capable of transcription and translation
+  - supports 96 languages
+- trained on 680,000 hours of labeled speech data
+  - audio inputs were 30 seconds long and resampled to 16kHz
+  - then converted to 80-channel log-magnitude Mel spectrogram representation (computed on 25ms windows with a stride of 10ms)
+  - then all values in this feature space (log-Mel spectrogram) are scaled to [-1, 1] range
