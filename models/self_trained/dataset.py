@@ -20,9 +20,15 @@ class ASRDataset(Dataset):
     
     def __getitem__(self, idx):
         audio = torch.tensor(self.dataset[idx]["audio"]["array"], dtype=torch.float32)
+        audio = audio / audio.abs().max()
         transcript = self.dataset[idx]["ref_orig"]
         mel_spec = self.mel_transform(audio).unsqueeze(0)
-        tokens = [self.vocab_dict[char] for char in transcript if char in self.vocab_dict]
+        tokens = []
+        for char in transcript:
+            if char in self.vocab_dict:
+                tokens.append(self.vocab_dict[char])
+            else:
+                print(f"Warning: Character '{char}' not in vocab_dict.")
         return {
             "mel_spec": mel_spec,
             "mel_length": mel_spec.shape[2],
