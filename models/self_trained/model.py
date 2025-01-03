@@ -5,23 +5,23 @@ from torch.utils.data import DataLoader
 from datasets import load_dataset
 
 from dataset import ASRDataset, collate_fn
+from residual import ResidualBlock
+from loss import WeightedCTCLoss
 
 class ASRModel(nn.Module):
-    def __init__(self, n_mels, num_classes, hidden_dim=256):
+    def __init__(self, n_mels, num_classes, hidden_dim=512):
         super(ASRModel, self).__init__()
 
-        # Feature extractor (CNN)
+        # Feature extractor (CNN with Residual Blocks)
         self.cnn = nn.Sequential(
-            nn.Conv2d(1, 32, kernel_size=3, stride=2, padding=1),
-            nn.ReLU(),
-            nn.Conv2d(32, 64, kernel_size=3, stride=2, padding=1),
-            nn.ReLU(),
-        )
-        self.hidden_dim = hidden_dim
-        self.num_classes = num_classes
+            ResidualBlock(1, 32, stride=2),
+            ResidualBlock(32, 64, stride=2),
+            ResidualBlock(64, 128, stride=2),
 
-        reduced_n_mels = n_mels // 4
-        input_size = 64 * reduced_n_mels
+        )
+        self.downsampling_factor = 8
+        reduced_n_mels = n_mels // self.downsampling_factor
+        input_size = 128 * reduced_n_mels
         self.rnn = nn.LSTM(
             input_size=input_size,
             hidden_size=hidden_dim,
@@ -30,21 +30,16 @@ class ASRModel(nn.Module):
             bidirectional=True,
             dropout=0.3
         )
+        transformer_layer = nn.TransformerEncoderLayer(d_model=hidden_dim * 2, nhead=8, dim_feedforward=1024, dropout=0.3, batch_first=True)
+        self.transformer = nn.TransformerEncoder(transformer_layer, num_layers=4)
         self.fc = nn.Linear(hidden_dim * 2, num_classes)
     
     def forward(self, x):
-        # x: (batch_size, 1, n_mels, time_frames)
-        batch_size, _, n_mels, time_frames = x.size()
-
-        x = self.cnn(x) # (batch_size, 64, n_mels//4, time_frames//4)
-        x = x.permute(0, 3, 1, 2) # (batch_size, time_frames//4, 64, n_mels//4)
-
-        batch_size, time_steps, num_channels, reduced_n_mels = x.size()
-        input_size = num_channels * reduced_n_mels
-        x = x.reshape(batch_size, time_steps, input_size)
-
+        x = self.cnn(x) # (batch_size, 128, n_mels//8, time_frames//8)
+        x = x.permute(0, 3, 1, 2).reshape(x.size(0), x.size(3), -1) # (batch_size, time_frames, input_size)
         x, _ = self.rnn(x) # (batch_size, time_steps, hidden_dim*2)
-        x = self.fc(x) # (batch_size, time_steps, num_classes)
+        x = self.transformer(x.permute(1, 0, 2)).permute(1, 0, 2)
+        x = self.fc(x)
         return x
 
 # -- Creating vocab
@@ -79,7 +74,7 @@ num_classes = len(vocab) + 1
 model = ASRModel(n_mels, num_classes)
 
 # Optimizer and loss
-optimizer = optim.Adam(model.parameters(), lr=1e-4)
+optimizer = optim.Adam(model.parameters(), lr=1e-3)
 criterion = nn.CTCLoss(blank=0, reduction="mean", zero_infinity=True)
 
 def greedy_decoder(preds):
@@ -96,24 +91,24 @@ def greedy_decoder(preds):
 
 # -- Training loop --
 def train():
-    num_epochs = 5
+    num_epochs = 3
     is_printed = False
     for epoch in range(num_epochs):
         for batch in train_loader:
             audio = batch["mel_specs"]
             audio_lengths = batch["mel_lengths"]
-            downsampling_factor = 4
-            adjusted_audio_lengths = audio_lengths // downsampling_factor
+            adjusted_audio_lengths = audio_lengths // model.downsampling_factor
             transcripts = batch["tokens"]
             transcript_lengths = batch["token_lengths"]
             # Forward pass
             outputs = model(audio)
             log_probs = torch.log_softmax(outputs, dim=-1)
             if not is_printed:
-                print("First transcript:", greedy_decoder(transcripts)[0])
-                preds = torch.argmax(log_probs, dim=-1)
-                print("First pred:", greedy_decoder(preds)[0])
-                is_printed = True
+                with torch.no_grad():
+                    print("First transcript:", greedy_decoder([transcripts[0]]))
+                    preds = torch.argmax(log_probs, dim=-1)
+                    print("First pred:", greedy_decoder([preds[0]]))
+                    is_printed = True
             # Compute loss
             loss = criterion(
                 log_probs.permute(1, 0, 2), # CTC expects (time, batch, num_classes)

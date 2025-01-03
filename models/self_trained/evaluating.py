@@ -52,14 +52,17 @@ def evaluate(model, val_loader, criterion):
         for batch in val_loader:
             audio = batch["mel_specs"]
             audio_lengths = batch["mel_lengths"]
-            downsampling_factor = 4
-            adjusted_audio_lengths = audio_lengths // downsampling_factor
+            adjusted_audio_lengths = audio_lengths // model.downsampling_factor
             transcripts = batch["tokens"]
             transcript_lengths = batch["token_lengths"]
 
             # Forward pass
             outputs = model(audio)
             log_probs = torch.log_softmax(outputs, dim=-1)
+
+            print("First transcript:", greedy_decoder([transcripts[0]]))
+            preds = torch.argmax(log_probs, dim=-1)
+            print("First pred:", greedy_decoder([preds[0]]))
 
             loss = criterion(
                 log_probs.permute(1, 0, 2),
