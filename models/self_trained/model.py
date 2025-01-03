@@ -27,7 +27,8 @@ class ASRModel(nn.Module):
             hidden_size=hidden_dim,
             num_layers=2,
             batch_first=True,
-            bidirectional=True
+            bidirectional=True,
+            dropout=0.3
         )
         self.fc = nn.Linear(hidden_dim * 2, num_classes)
     
@@ -78,12 +79,25 @@ num_classes = len(vocab) + 1
 model = ASRModel(n_mels, num_classes)
 
 # Optimizer and loss
-optimizer = optim.Adam(model.parameters(), lr=1e-3)
-ctc_loss = nn.CTCLoss(blank=0)
+optimizer = optim.Adam(model.parameters(), lr=1e-4)
+criterion = nn.CTCLoss(blank=0, reduction="mean", zero_infinity=True)
+
+def greedy_decoder(preds):
+    decoded = []
+    for pred in preds:
+        decoded_seq = []
+        prev_token = None
+        for token in pred:
+            if token != prev_token and token != 0:
+                decoded_seq.append(token)
+            prev_token = token
+        decoded.append(''.join([inv_vocab[t.item()] for t in decoded_seq]))
+    return decoded
 
 # -- Training loop --
 def train():
-    num_epochs = 1
+    num_epochs = 5
+    is_printed = False
     for epoch in range(num_epochs):
         for batch in train_loader:
             audio = batch["mel_specs"]
@@ -92,13 +106,16 @@ def train():
             adjusted_audio_lengths = audio_lengths // downsampling_factor
             transcripts = batch["tokens"]
             transcript_lengths = batch["token_lengths"]
-
             # Forward pass
             outputs = model(audio)
             log_probs = torch.log_softmax(outputs, dim=-1)
-
+            if not is_printed:
+                print("First transcript:", greedy_decoder(transcripts)[0])
+                preds = torch.argmax(log_probs, dim=-1)
+                print("First pred:", greedy_decoder(preds)[0])
+                is_printed = True
             # Compute loss
-            loss = ctc_loss(
+            loss = criterion(
                 log_probs.permute(1, 0, 2), # CTC expects (time, batch, num_classes)
                 transcripts,
                 adjusted_audio_lengths,
@@ -110,7 +127,11 @@ def train():
             loss.backward()
             optimizer.step()
         
+        # for name, param in model.named_parameters():
+        #     if param.grad is not None:
+        #         print(f"{name}: Gradient Mean = {param.grad.abs().mean()}")
         print(f"Epoch {epoch + 1}, Loss: {loss.item()}")
+        is_printed = False
 
     torch.save(model.state_dict(), "model_state_dict.pth")
 

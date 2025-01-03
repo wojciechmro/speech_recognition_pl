@@ -1,9 +1,8 @@
 import torch
 from torch.utils.data import DataLoader
 from datasets import load_dataset
-from jiwer import wer
 
-from model import ASRModel, ASRDataset, collate_fn
+from model import ASRModel, ASRDataset, collate_fn, greedy_decoder
 
 # -- Creating vocab
 
@@ -20,20 +19,6 @@ vocab = sorted(set(all_charts))
 vocab_dict = {char: idx + 1 for idx, char in enumerate(vocab)}
 vocab_dict['<blank>'] = 0
 inv_vocab = {idx: char for char, idx in vocab_dict.items()}
-
-
-def greedy_decoder(log_probs):
-    preds = torch.argmax(log_probs, dim=-1)
-    decoded = []
-    for pred in preds:
-        decoded_seq = []
-        prev_token = None
-        for token in pred:
-            if token != prev_token and token != 0:
-                decoded_seq.append(token)
-            prev_token = token
-        decoded.append(''.join([inv_vocab[t.item()] for t in decoded_seq]))
-    return decoded
 
 n_mels = 80
 num_classes = len(vocab) + 1
