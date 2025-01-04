@@ -44,7 +44,6 @@ class ASRDataset(Dataset):
         inv_vocab = {idx: char for char, idx in vocab_dict.items()}
         
         print(f"Generated vocabulary with {len(vocab_dict)} tokens.")
-        print(vocab_dict)
         return vocab_dict, inv_vocab
 
 
