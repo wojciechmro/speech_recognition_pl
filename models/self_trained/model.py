@@ -42,7 +42,7 @@ class ASRModel(nn.Module):
         x = self.fc(x)
         return x
 
-# -- Creating vocab
+# -- Creating dataloader
 
 ds = load_dataset(
     path="amu-cai/pl-asr-bigos-v2",
@@ -50,23 +50,13 @@ ds = load_dataset(
     split="train"
 )
 
-transcripts = [example["ref_orig"] for example in ds]
-
-all_charts = ''.join(transcripts)
-vocab = sorted(set(all_charts))
-vocab_dict = {char: idx + 1 for idx, char in enumerate(vocab)}
-vocab_dict['<blank>'] = 0
-inv_vocab = {idx: char for char, idx in vocab_dict.items()}
-
-# -- Creating dataloader
-
 n_mels = 80
 train_dataset = ASRDataset(
-    dataset=ds, 
-    vocab_dict=vocab_dict, 
+    dataset=ds,  
     sample_rate=16000, 
     n_mels=n_mels,
     max_audio_length=3,
+    min_audio_length=0
     )
 train_loader = DataLoader(
     train_dataset,
@@ -76,7 +66,7 @@ train_loader = DataLoader(
 )
 
 # Model hyperparameters
-num_classes = len(vocab) + 1
+num_classes = len(train_dataset.vocab_dict) + 1
 model = ASRModel(n_mels, num_classes)
 
 # Optimizer and loss
@@ -92,7 +82,7 @@ def greedy_decoder(preds):
             if token != prev_token and token != 0:
                 decoded_seq.append(token)
             prev_token = token
-        decoded.append(''.join([inv_vocab[t.item()] for t in decoded_seq]))
+        decoded.append(''.join([train_dataset.inv_vocab[t.item()] for t in decoded_seq]))
     return decoded
 
 # -- Training loop --
