@@ -8,7 +8,7 @@ from model import ASRModel, ASRDataset, collate_fn, greedy_decoder
 
 ds = load_dataset(
     path="amu-cai/pl-asr-bigos-v2",
-    name="pwr-azon_spont-20",
+    name="mozilla-common_voice_15-23",
     split="train"
 )
 
@@ -30,10 +30,17 @@ model.load_state_dict(torch.load("model_state_dict.pth", weights_only=True))
 
 val_ds = load_dataset(
     path="amu-cai/pl-asr-bigos-v2",
-    name="pwr-azon_spont-20",
+    name="mozilla-common_voice_15-23",
     split="validation"
 )
-validation_dataset = ASRDataset(val_ds, vocab_dict, sample_rate=16000, n_mels=n_mels)
+
+validation_dataset = ASRDataset(
+    dataset=val_ds, 
+    vocab_dict=vocab_dict, 
+    sample_rate=16000, 
+    n_mels=n_mels,
+    max_audio_length=3,
+)
 validation_loader = DataLoader(
     validation_dataset,
     batch_size=16,

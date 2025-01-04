@@ -3,10 +3,10 @@ import torchaudio.transforms as T
 from torch.utils.data import Dataset
 from torch.nn.utils.rnn import pad_sequence
 import torch.nn.functional as F
+import string
 
 class ASRDataset(Dataset):
-    def __init__(self, dataset, vocab_dict, sample_rate=16000, n_mels=80):
-        self.dataset = dataset
+    def __init__(self, dataset, vocab_dict, sample_rate=16000, n_mels=80, max_audio_length=None):
         self.vocab_dict = vocab_dict
         self.mel_transform = T.MelSpectrogram(
             sample_rate=sample_rate,
@@ -14,7 +14,23 @@ class ASRDataset(Dataset):
             n_fft=400,
             hop_length=160
         )
+        self.sample_rate = sample_rate
+
+        if max_audio_length:
+            max_samples = int(max_audio_length * sample_rate)
+            self.dataset = [
+                item for item in dataset
+                if len(item["audio"]["array"]) <= max_samples
+            ]
+            print(f"Filtered dataset to {len(self.dataset)} from {len(dataset)} samples.")
+        else:
+            self.dataset = dataset
     
+    def preprocess_transcript(self, transcript):
+        transcript = transcript.lower()
+        transcript = transcript.translate(str.maketrans('', '', string.punctuation))
+        return transcript
+
     def __len__(self):
         return len(self.dataset)
     
@@ -22,6 +38,7 @@ class ASRDataset(Dataset):
         audio = torch.tensor(self.dataset[idx]["audio"]["array"], dtype=torch.float32)
         audio = audio / audio.abs().max()
         transcript = self.dataset[idx]["ref_orig"]
+        transcript = self.preprocess_transcript(transcript)
         mel_spec = self.mel_transform(audio).unsqueeze(0)
         tokens = []
         for char in transcript:

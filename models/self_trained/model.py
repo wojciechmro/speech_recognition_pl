@@ -3,10 +3,10 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 from datasets import load_dataset
+from tqdm import tqdm
 
 from dataset import ASRDataset, collate_fn
 from residual import ResidualBlock
-from loss import WeightedCTCLoss
 
 class ASRModel(nn.Module):
     def __init__(self, n_mels, num_classes, hidden_dim=512):
@@ -46,7 +46,7 @@ class ASRModel(nn.Module):
 
 ds = load_dataset(
     path="amu-cai/pl-asr-bigos-v2",
-    name="pwr-azon_spont-20",
+    name="mozilla-common_voice_15-23",
     split="train"
 )
 
@@ -61,7 +61,13 @@ inv_vocab = {idx: char for char, idx in vocab_dict.items()}
 # -- Creating dataloader
 
 n_mels = 80
-train_dataset = ASRDataset(ds, vocab_dict, sample_rate=16000, n_mels=n_mels)
+train_dataset = ASRDataset(
+    dataset=ds, 
+    vocab_dict=vocab_dict, 
+    sample_rate=16000, 
+    n_mels=n_mels,
+    max_audio_length=3,
+    )
 train_loader = DataLoader(
     train_dataset,
     batch_size=16,
@@ -94,7 +100,7 @@ def train():
     num_epochs = 3
     is_printed = False
     for epoch in range(num_epochs):
-        for batch in train_loader:
+        for batch in tqdm(train_loader, desc="Training", leave=False):
             audio = batch["mel_specs"]
             audio_lengths = batch["mel_lengths"]
             adjusted_audio_lengths = audio_lengths // model.downsampling_factor
