@@ -1,9 +1,11 @@
 import torch
+import json
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 from datasets import load_dataset
 from tqdm import tqdm
+
 
 from dataset import ASRDataset, collate_fn
 from lstm import ASRModel
@@ -84,9 +86,6 @@ def train():
             loss.backward()
             optimizer.step()
         
-        # for name, param in model.named_parameters():
-        #     if param.grad is not None:
-        #         print(f"{name}: Gradient Mean = {param.grad.abs().mean()}")
         print(f"Epoch {epoch + 1}, Loss: {loss.item()}")
         is_printed = False
 
@@ -94,3 +93,6 @@ def train():
 
 if __name__ == "__main__":
     train()
+    with open("vocab.json", "w") as f:
+        json.dump(train_dataset.vocab_dict, f)
+    print("Vocabulary saved to vocab.json")

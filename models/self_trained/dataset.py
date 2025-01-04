@@ -6,7 +6,7 @@ import torch.nn.functional as F
 import unicodedata
 
 class ASRDataset(Dataset):
-    def __init__(self, dataset, sample_rate=16000, n_mels=80, max_audio_length=None, min_audio_length=0):
+    def __init__(self, dataset, sample_rate=16000, n_mels=80, max_audio_length=None, min_audio_length=0, vocab_dict=None):
         self.mel_transform = T.MelSpectrogram(
             sample_rate=sample_rate,
             n_mels=n_mels,
@@ -27,7 +27,11 @@ class ASRDataset(Dataset):
         else:
             self.dataset = dataset
 
-        self.vocab_dict, self.inv_vocab = self._create_vocab()
+        if vocab_dict:
+            self.vocab_dict = vocab_dict
+            self.inv_vocab = {idx: char for char, idx in vocab_dict.items()}
+        else:
+            self.vocab_dict, self.inv_vocab = self._create_vocab()
     
     def preprocess_transcript(self, transcript):
         transcript = transcript.lower()

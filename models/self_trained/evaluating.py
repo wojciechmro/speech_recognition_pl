@@ -1,30 +1,9 @@
 import torch
+import json
 from torch.utils.data import DataLoader
 from datasets import load_dataset
 
-from model import ASRModel, ASRDataset, collate_fn, greedy_decoder
-
-# -- Creating vocab
-
-ds = load_dataset(
-    path="amu-cai/pl-asr-bigos-v2",
-    name="mozilla-common_voice_15-23",
-    split="train"
-)
-
-transcripts = [example["ref_orig"] for example in ds]
-
-all_charts = ''.join(transcripts)
-vocab = sorted(set(all_charts))
-vocab_dict = {char: idx + 1 for idx, char in enumerate(vocab)}
-vocab_dict['<blank>'] = 0
-inv_vocab = {idx: char for char, idx in vocab_dict.items()}
-
-n_mels = 80
-num_classes = len(vocab) + 1
-model = ASRModel(n_mels, num_classes)
-
-model.load_state_dict(torch.load("model_state_dict.pth", weights_only=True))
+from train import ASRModel, ASRDataset, collate_fn, greedy_decoder
 
 # -- Validation dataset
 
@@ -34,12 +13,19 @@ val_ds = load_dataset(
     split="validation"
 )
 
+with open("vocab.json", "r") as f:
+    vocab_dict = json.load(f)
+print("Vocabulary loaded from vocab.json")
+
+n_mels = 80
+
 validation_dataset = ASRDataset(
     dataset=val_ds, 
-    vocab_dict=vocab_dict, 
     sample_rate=16000, 
     n_mels=n_mels,
-    max_audio_length=3,
+    max_audio_length=4,
+    min_audio_length=0,
+    vocab_dict=vocab_dict
 )
 validation_loader = DataLoader(
     validation_dataset,
@@ -47,6 +33,11 @@ validation_loader = DataLoader(
     shuffle=True,
     collate_fn=collate_fn
 )
+
+num_classes = len(vocab_dict) + 1
+model = ASRModel(n_mels, num_classes)
+
+model.load_state_dict(torch.load("model_state_dict.pth", weights_only=True))
 
 # -- Evaluation --
 
@@ -58,8 +49,7 @@ def evaluate(model, val_loader, criterion):
     with torch.no_grad():
         for batch in val_loader:
             audio = batch["mel_specs"]
-            audio_lengths = batch["mel_lengths"]
-            adjusted_audio_lengths = audio_lengths // model.downsampling_factor
+            audio_lengths = batch["mel_lengths"] // 4
             transcripts = batch["tokens"]
             transcript_lengths = batch["token_lengths"]
 
@@ -74,7 +64,7 @@ def evaluate(model, val_loader, criterion):
             loss = criterion(
                 log_probs.permute(1, 0, 2),
                 transcripts,
-                adjusted_audio_lengths,
+                audio_lengths,
                 transcript_lengths
             )
             total_loss += loss.item() * audio.size(0)
