@@ -7,7 +7,7 @@ from datasets import load_dataset
 from tqdm import tqdm
 
 
-from dataset import ASRDataset, collate_fn
+from dataset import ASRDataset, collate_fn, greedy_decoder
 from lstm import ASRModel
 
 
@@ -42,17 +42,6 @@ model = ASRModel(n_mels, num_classes)
 optimizer = optim.Adam(model.parameters(), lr=1e-3)
 criterion = nn.CTCLoss(blank=0, reduction="mean", zero_infinity=True)
 
-def greedy_decoder(preds):
-    decoded = []
-    for pred in preds:
-        decoded_seq = []
-        prev_token = None
-        for token in pred:
-            if token != prev_token and token != 0:
-                decoded_seq.append(token)
-            prev_token = token
-        decoded.append(''.join([train_dataset.inv_vocab[t.item()] for t in decoded_seq]))
-    return decoded
 
 # -- Training loop --
 def train():
@@ -69,9 +58,9 @@ def train():
             log_probs = torch.log_softmax(outputs, dim=-1)
             if not is_printed:
                 with torch.no_grad():
-                    print("transcripts:", greedy_decoder(transcripts[0:2]))
+                    print("transcripts:", greedy_decoder(transcripts[0:2], train_dataset.inv_vocab))
                     preds = torch.argmax(log_probs, dim=-1)
-                    print("preds:", greedy_decoder(preds[0:2]))
+                    print("preds:", greedy_decoder(preds[0:2], train_dataset.inv_vocab))
                     is_printed = True
             # Compute loss
             loss = criterion(

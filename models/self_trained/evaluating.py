@@ -3,7 +3,8 @@ import json
 from torch.utils.data import DataLoader
 from datasets import load_dataset
 
-from train import ASRModel, ASRDataset, collate_fn, greedy_decoder
+from lstm import ASRModel
+from dataset import ASRDataset, collate_fn, greedy_decoder, get_inv_vocab
 
 # -- Validation dataset
 
@@ -16,6 +17,7 @@ val_ds = load_dataset(
 with open("vocab.json", "r") as f:
     vocab_dict = json.load(f)
 print("Vocabulary loaded from vocab.json")
+inv_vocab = get_inv_vocab(vocab_dict)
 
 n_mels = 80
 
@@ -57,9 +59,9 @@ def evaluate(model, val_loader, criterion):
             outputs = model(audio)
             log_probs = torch.log_softmax(outputs, dim=-1)
 
-            print("First transcript:", greedy_decoder([transcripts[0]]))
+            print("First transcript:", greedy_decoder([transcripts[0]], inv_vocab))
             preds = torch.argmax(log_probs, dim=-1)
-            print("First pred:", greedy_decoder([preds[0]]))
+            print("First pred:", greedy_decoder([preds[0]], inv_vocab))
 
             loss = criterion(
                 log_probs.permute(1, 0, 2),

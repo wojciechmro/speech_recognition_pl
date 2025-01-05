@@ -5,6 +5,9 @@ from torch.nn.utils.rnn import pad_sequence
 import torch.nn.functional as F
 import unicodedata
 
+def get_inv_vocab(vocab_dict):
+    return {idx: char for char, idx in vocab_dict.items()}
+
 class ASRDataset(Dataset):
     def __init__(self, dataset, sample_rate=16000, n_mels=80, max_audio_length=None, min_audio_length=0, vocab_dict=None):
         self.mel_transform = T.MelSpectrogram(
@@ -29,7 +32,7 @@ class ASRDataset(Dataset):
 
         if vocab_dict:
             self.vocab_dict = vocab_dict
-            self.inv_vocab = {idx: char for char, idx in vocab_dict.items()}
+            self.inv_vocab = get_inv_vocab(vocab_dict)
         else:
             self.vocab_dict, self.inv_vocab = self._create_vocab()
     
@@ -45,7 +48,7 @@ class ASRDataset(Dataset):
         
         vocab_dict = {char: idx + 1 for idx, char in enumerate(unique_chars)}
         vocab_dict['<blank>'] = 0  # Add blank token for CTC loss
-        inv_vocab = {idx: char for char, idx in vocab_dict.items()}
+        inv_vocab = get_inv_vocab(vocab_dict)
         
         print(f"Generated vocabulary with {len(vocab_dict)} tokens.")
         return vocab_dict, inv_vocab
@@ -88,3 +91,15 @@ def collate_fn(batch):
         "tokens": tokens_padded,
         "token_lengths": torch.tensor(token_lengths, dtype=torch.long),
     }
+
+def greedy_decoder(preds, inv_vocab):
+    decoded = []
+    for pred in preds:
+        decoded_seq = []
+        prev_token = None
+        for token in pred:
+            if token != prev_token and token != 0:
+                decoded_seq.append(token)
+            prev_token = token
+        decoded.append(''.join([inv_vocab[t.item()] for t in decoded_seq]))
+    return decoded
