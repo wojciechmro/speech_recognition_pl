@@ -5,3 +5,5 @@ notes.md
 datasets/
 testing.ipynb
 datasets_processed/
+models/finetuned/whisper_finetuned_tiny/
+models/finetuned/whisper_finetuned_tiny_full/
