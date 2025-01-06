@@ -83,3 +83,4 @@ urllib3==2.2.3
 wcwidth==0.2.13
 xxhash==3.5.0
 yarl==1.18.3
+Levenshtein

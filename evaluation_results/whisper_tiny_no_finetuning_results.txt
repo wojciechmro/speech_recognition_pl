@@ -1,0 +1,403 @@
+Evaluation Results (Standard Model)
+===================================
+Average CER: 0.2185
+Average WER: 1.2716
+
+Detailed Results:
+================
+--------------------------------------------------
+File: sample_0.wav
+Reference: to jest troszeczkę przesad przesadzone bo to tak można powiedzieć że było po pierwsze włoskie bo bo włoch wygrał
+Prediction:  To jest troszeczkę przyszedł. To tak można powiedzieć, że było po pierwsze włoskie, bo włog wygrał.
+CER: 0.2232
+WER: 1.2632
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_1.wav
+Reference: który majce zabrał białą koszulkę a po trzecie polskie bo dwóch polaków było w dziesiątce i naszych startowało raptem trzech dwóch w dziesiątce więc plan wykonany
+Prediction:  który ma ice zabrał w Jąko Szulkę, a po trzecie polskie, bo dwóch Polaków było w dziesiące i naszych startowało raptem 3,5 w dziesiące, więc plan wykonany.
+CER: 0.1790
+WER: 1.0769
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_10.wav
+Reference: czyli to w ogóle zmieniły się zasady finansowania sportu nie ma co o omawiać wszystko to wiemy i my zostaliśmy troszeczkę
+Prediction:  czyli dowogule zmieniły się zasyty finansowania sportu, nie ma co o mawieć wszystko, to wiemy. I my zostać liczbę troszeczkę.
+CER: 0.1653
+WER: 0.9048
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_11.wav
+Reference: żeby jakoś yyy połączyć te dwa zupełnie
+Prediction:  żeby jakoś połączyć dwa zupełnie.
+CER: 0.2308
+WER: 1.1429
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_12.wav
+Reference: yyy w blokach dlatego że ucei nic nie zrobiła w tym kierunku
+Prediction:  W blockach dlatego, że ucej nie zniedzę robiła w tym kierunku.
+CER: 0.2167
+WER: 1.1667
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_13.wav
+Reference: żeby zrozumieć co to znaczy to te trzy słowa topologiczne ciecze kwantowe sobie wytłumaczymy yyy topologia to jest taki dział matematyki który się zachowuje takimi cechami które nie są zależne od drobnych zmian czy ciągłych deformacji układów stare takie to jest stary dział matematyki czyli pierwsze takie problemy które się pojawiły
+Prediction:  Żeby zrobię co to znaczy, to te trzy słowa toologiczne cieczek fantowy sobie wytłumaczymy. To pologia to jest taki dział matematyki, który się zachowuje, taki micechami, które nie są zależne od drobnych zmian, czy ciągu w deformacji układu. Stary takie to jest stary dział matematyki. Czyli pierwsze takie problemy, które się pojawił.
+CER: 0.1108
+WER: 0.7059
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_14.wav
+Reference: obecnie się uważa za historyczne jak chodzi o topologię to jest na przykład to sławne zagadnienie a które ojler rozwiązał siedmiu mostów w królewcu czyli czy da się przejść aby odwiedzić wszystkie części miasta przechodząc przez każdy most tylko raz albo jest takie znane pewnie twierdzenia y które też ojler jest twierdzenie ojlera o ścianach wypukłych z tym że każdy wielościan wypukły jak się mu policzy ile ma krawędzi ile ma ścian ile ma wierzchołków to to się sumuje zawsze tak samo czyli to są takie pra
+Prediction:  bez niesiewał zachistoryczny, jak chodzi o toologię. Te znaczka te słowne zagadnienie, które ojler rozwiązał 7 mostów królewcu, czyli czy da się przejść, bo odwiedzić wszystkie części miasta, przedom przez każdy mostr. Koraz albo jest takie znane pewnie odwierdzenie, które też ojler, to jest wylewają ściana, w wypółku, że każdy wielościan w wypółku, jak się mupolicy ile ma krawędzi, ile ma ścian i ile ma wioschoku, to się sumują zawsze tak samo. Czyli to są takie prawa,
+CER: 0.2353
+WER: 1.3793
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_15.wav
+Reference: znaczy takie takie poszukiwania takich praw że jak nawet będziemy coś deformować czyli wykrzywiać ten wielościan albo przesuwać te te mosty trochę względem siebie to okej wszystko prawie się zmienia ale pewne rzeczy się nie zmieniają są takie niezmienniki czyli są pewne cechy które są nieczułe na takie drobne zmiany jak się takie coś uda znaleźć w fizyce to jest pięknie yyy inny przykład to są węzły też prawda wiadomo że nie da się jednego węzła przyplątać na drugi jeśli są topologicznie nierównoważne ale jest cała masa węzłów które wydają się różne ale
+Prediction:  czy takie poszukiwanie takich praw, że jak nawet będziemy coś deformować, czyli wykrzyłeś ten wielości, albo przesuwać te, te mosty trochę względem siebie, to ok. Wszystko prawie się zmienia, ale pewne rzeczy się nie zmieniają. Są takie nie zmienniki, czyli są pewne cechy, które są nie czuły na takie drobne zmiany. Jak się takie to się nazywa, znaleźć fizyce, to jest pięknie. Inny przykład to są wezły, też prawda wiadomo, że nie da się jednego wezła, przeplądaczna drugi, jeśli są to pologicznie. Nie równoważne, ale cała masawenzów, które wydają się różne,
+CER: 0.1449
+WER: 0.8710
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_16.wav
+Reference: są topologicznie równoważne prawda bo się je da w sposób ciągły przekształcić więc tego szukamy yyy w fizyce teraz ciecz no to to pewnie wszyscy wiedzą co to jest ciecz prawda czy nam się wydaje że się wie bo zdaje się taka prawdziwa definicja cieczy nie jest taka prosta ale jest to z grubsza mówiąc taki stan skupienia który jest z jednej strony skondensowany jak ciało stałe ale jest płynny tak jak gaz y czyli taki pośredni dobrze i teraz jak się tę ciecz uda zrobić kwantową to znaczy że to się musi składać
+Prediction:  to poologiczne równoważne, bo się jeda. Po subciągu przekształciem z tego, szukamy fizyt. Zcieć, to to pewnie wszyscy wiedzą, co to jest cieczny, czy prawda? Czy wytaje, że się wie, bo da się tak naprawdę iwa definicja, cieczny jest taka prosta, ale jest to z grubsza, mówiąc taki stan skupienia, który jest jedny z tym skondensowany, jak ciało stała, ale jest płynny, tak jak gas i taki pośredni. Dobrze, i teraz jak się ten ciecz uda zrobić kwantową, to znaczy, że to się musi składać,
+CER: 0.2207
+WER: 1.2021
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_17.wav
+Reference: które opisywane są mechaniką kwantową czy to nie są punkciki yyy typu typu typu elektron przepraszam typu kwantowe cząstki tylko to są typu klasyczne cząstki tylko to są takie obiekty no które poruszają się na orbitalach tak jak w cząsteczkach yyy chemicznych raczej tutaj to są te stany wodorowe o których była mowa jeszcze na poprzednim wykładzie
+Prediction:  które posiedłany są majką kwantową, gdzie to nie są punkciki typu elektrony, nie przeszemy typu kwantowe, czy on jest typu klasyczny, czy on jest taki obiekty, które jest zaporuszają się na orbitalach, tak jak w cząsteczkach chemicznych, które lat się tutaj to są te stany wodorowo, których błamołaś są poprzednie wykładzie.
+CER: 0.3391
+WER: 2.0526
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_18.wav
+Reference: tak przy okazji atom tak nie wygląda oczywiście to jest to nawet była nagroda nobla za ten model model jest absolutnie do niczego to jest model atomu bora ale w pewnym sensie bardzo ważny teraz tak podstawowe cechy które świat kwantowy jakby no charakteryzują w odróżnieniu od tej intuicji którą mamy w świecie klasycznym to są takie rzeczy jak ta ta dualność cząstkowo falowa czyli ten złudny podział pomiędzy tym czy coś jest cząstką czy falą nieoznaczoność czyli
+Prediction:  Tak przy okazji, a to tak. Nie wygląda oczywiście to jest na to nawet była nagroda. Nobla za ten model model absolutnie do niczego, to jest modela tam ubora, ale w pewnym sensie bardzo ważnych. Teraz tak podstawowe cechy, które świat kwentowy, jak by no charakterizują, wodróżnię tej intuicy, którą mam świecie krasycznym, co są takie rzeczy, jak to doualne, ścząstkowo-falowa, czyli ten zudny, podział pomiędzy tym, czy coś jeszcze on skończy fala, nieoznaczono,
+CER: 0.1828
+WER: 1.0769
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_19.wav
+Reference: czyli to że one zajmują jednocześnie pewien obszar w przestrzeni cały czas a nie a nie jakieś miejsce konkretne jakiś punkt
+Prediction:  czyli to, że zajmują jednocześnie pewien obszarów przestrzeni cały czas, a nie jakieś miejsce, konkretne jakieś punkt.
+CER: 0.1301
+WER: 0.7143
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_2.wav
+Reference: wykonany znakomicie ja bym to określił jako początki renesansu polskiego polskiego kolarstwa yyy historia kolarstwa jest taka że my brylowaliśmy
+Prediction:  zakońony z nakomicie. Ja wym to okreczki wieko początki ryny sensu polskiego koladstwa. Chictoria koladstwa jest taka, że my byli lowaliśmy.
+CER: 0.3056
+WER: 2.1500
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_20.wav
+Reference: przypadkowość inherentna wyników obserwacji czyli zdarzeń lokalność to że różne stany układu można ze soba w pewnym sensie składać i to ma sens czyli suma różnych dwóch stanów jest coś sensownego a nie tylko takie takie w klasycznej fizyce nie ma takiej intuicji i teraz jak te wszystkie te trzy słowa razem się poskłada to mamy topologiczną ciecz kwantową czyli to jest taka ciecz która jest złożona z elektronów a nie na przykład z atomów czy cząsteczek a więc to jest ciecz złożona z obiektów o cechach które są istotnie
+Prediction:  Przepadkowo się in herętna wyniku w obserwacji, czyli zdarzeń, nielokalność, to, że z różne wstany układu można zebów pewnym sensie składa ci to ma sens, czyli sumaróżnych dług stanów to jest coś sensownego, a nie tylko takie wkrasyczne fizy nie ma takie intuicji. I teraz, jak to wszystkie te trzesłała się razem poskłada, to mamy teologiczną ciać kvantową, czyli to jest taka ciać, które jest złożona z elektronów, a nie na przykład zatem wczucząc teczek, a więc to jest ciedzę różne zobiektów, o cochach, które są istotne
+CER: 0.1931
+WER: 1.1111
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_21.wav
+Reference: kwantowe czyli mają te wszystkie cechy z poprzedniego slajdu między innymi są rozmyte w przestrzeni prawda a nie takie kropeczki i teraz istotne własności tej cechy muszą być niezmienne przy ciągłej deformacji czyli pewne parametry układają się niezmiennie w sposób ciągły to coś co odpowiada za wynik eksperymentu za zachowanie w przyrodzie za jakieś urządzenie które będzie na tym oparte ma się nie zmieniać ma być niezależne czyli ma być niezmiennikiem topologicznym no jaka jest tam definicja bardziej poważna że to jest taki stan który jest opisywany typologiczną kwantową teorią pola
+Prediction:  kwantować i ma też wszystkie cechy z poprzedniego slajdą. Międzyim są rozmytę w przestrzeni, prawda, nie takie kropeczki. I teraz istotne własności tej cechy muszą być niezmienne przyciągu i deformacji, czyli przepawne parametry układach się w nozmieniu stosum ciągu, to co chcą odpowiada za wynika eksperymentu, za zachowanie w przyrodzie z jakieś urządzenie, która być na tym oparte, ma się nie zmieniać, ma być niezależne, czyli ma być niezmiennikiem teologiczne. A jaka jest tam definicja bardziej poważna, że to jest taki stan, który są pisywane i topologiczną kwantawą teorię,
+CER: 0.1494
+WER: 0.9560
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_22.wav
+Reference: to jest najbardziej prawdziwy ale i może najbardziej techniczny yyy i ale ważne tak jakby ktoś koncepcyjnie czy filozoficzne jest to że w odróżnieniu od klasycznej hierarchii stanów skupienia czyli tam ciecz gaz ciało stałe stan skondensowany w takim sensie topologicznym ma taką świetną cechę że ten stan skondensowany czyli jak coś zamarza albo albo jak się kondensuje czyli ten o niższej temperaturze ma wyższą symetrię a nie niższą
+Prediction:  to jest bardziej prawdziwy, ale najpózny najpózny najpózny techniczny. Ale ważne, tak jak bym też koncepcyjnie, czy filozoficzne jest to, że w odróżeni odkrasycznej hierarchistanów skupienia, czyli tam cieczga, stiało stałe. Stąd kondensowany w tym chipsenie toologiczny, mataką świetną cechę, że ten stan skondensowany, czy jak ktoś zamarza albo jak się jak kondensuje, czyli ten ojniczej temperaturze, ma wyższą symetry ani niszczą.
+CER: 0.2230
+WER: 1.3913
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_23.wav
+Reference: i mamy w wyniku ochładzania układy
+Prediction:  Ty mamy wyniku ochładzanie okładu
+CER: 0.2353
+WER: 1.1667
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_24.wav
+Reference: przykładem pierwszym kiedy takie coś w przyrodzie zauważono to jest klaus fon kmicyn skądinąd człowiek który się urodził w środzie śląskiej czyli niedaleko to jest niemiecki fizyk nobel w osiemdziesiątym piątym roku i nawet można zobaczyć sobie w notatniku kiedy to było o której godzinie to odkrycie nastąpiło to jest odkrycie tak zwanego kwantowego efektu hola czyli z grubsza eksperyment idzie tak prąd półelektryczny płynie w jedną stronę pole magnetyczne w drugą stronę siła lorenca spycha elektrony na bok pojawia się w poprzek napięcie elektryczne teraz jak się
+Prediction:  Przykładem pierwszym kiedy takie coś przyrodzie zauważona. To jest krawstwątplić z konieną człowiek, który się chodził w środzie Śląskiej, czyli nie daleko. To jest niemiecki fizyk nobel 805 roku i nawet można zobaczyć sobie w notatniku, kiedy to był, który i godzinie to odkrycie nastąpiło. To jest odkrycie tak z noją kwantowego efektu chola. Czyli z grupšach eksperymenty, gdzie tak, po elektryczny, po niewiedno stronę, po le Magdyczny, z drugą stronę, siła Lorenca, z pycha elektrony, nabok, pojawia się w poprzek napięcie elektryczne.
+CER: 0.2218
+WER: 1.4205
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_25.wav
+Reference: wykreśli to napięcie a konkretnie już opór elektryczny czyli tam odpowiednio podzielone jedno przez drugie napięcie przez prąd jako funkcję pola magnetycznego to klasycznie powinna być linia prosta obserwuje się w ekstremalnych warunkach obserwuje się schodki ekstremalne czyli niska temperatura silne pole odpowiednio czysta próbka i tak dalej teraz te schodki są pioruńsko dokładne one są całkowita liczba razy kombinacją stałych absolutnie stałych uniwersalnych czyli ładunek elektrony i stała plamka i jak się to odpowiednio przeliczy w tak zwaną
+Prediction:  Bykreśli to napięcie, a konkretnie już opór elektryczny, czyli tam odpowiednio podzielonej, jedno przez drugie, napięcie przez prącej kon funkcję pola, magnetycznego, co krasycznie powinno być dnia, prosta obserwuje się w ekstremalnych warunkach, obserwuje się schodki. Ekstremalne, czy wniska temperatur, racilne pola, odpowiednio czy sta próbka i tak dalej. To jest to schodki są pierunisko dokładne. One są całokowita liczba razy kombinacja stałych absolutnych stałych uniwersalnych, czyli ładunek elektronych stała planka, w jak się to odpowiednio przeliczę w tak zwaną,
+CER: 0.1091
+WER: 0.7468
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_26.wav
+Reference: poprzeczne czy odpowiednio się wielkość skonstruuje z tego czyli jest wielkość elektryczna mierzona w układzie który jest jakiś tam sobie rzeczywisty to nie jest pojedyncza cząsteczka czy atom tylko to jest kawał półprzewodnika w którym są normalne metalowe doczepione druty i w tym się mierzy wielkość elektryczną która jest skwantowana do takich stałych absolutnych na przykład na dziesięć cyfr
+Prediction:  Poprzeć na czy odpadnio się wielkość konstruwios tego, czy jest wielkość elektryczna mierzona w układzie, który jest jakiś tam sobie rzeczywisty. To nie jest pojedyncze, a cząsteczka czy atądka to jest kawał po uprzewodnika, do których są normalnie metalowe, do czepione druty. I w tym się mierzy wielkość elektryczną, które jest skfantowana do takich stałych absolutnych na przykład na 10 cywr.
+CER: 0.1439
+WER: 0.9492
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_27.wav
+Reference: czyli to jest niesamowite jakby zjawisko jak chodzi o emergencję porządku czy emergencję pewnej uniwersalności yyy dlatego że cała masa różnych tych tych tych różnych urządzeń które się tam będzie obserwować no i zawsze dokładnie ten sam wynik i ten wynik jest taki dokładny mimo że urządzenie jest no brudne w pewnym sensie już były dwie nagrody nobla z całego cyklu i to jest jakby historycznie to jest ten moment kiedy odkryto topologiczne stany materii
+Prediction:  Si, to jest niesamowite jakby zjawiska, chodziłem organizję pożądku czy amerygancję pewne uniwersalności. Dla tego, że cała masa różnych tych różnych urżądzeń, które się to będzie obserwować, zawsze dokładnie ten sam wynik i ten wynik jest taki dokładnym i może urżądzenie z brudne w pewnym sensie. Współtyjna grady noblastajego cyklu. I to jest jakby historycznie, to jest ten moment kiedy odkryto teologiczne stanę materii.
+CER: 0.1952
+WER: 1.1867
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_28.wav
+Reference: dobra teraz jakby przejawem tego że to jest tak jakby takim taką taką oznaką tego że to jest efekt topologiczny jest to co zacząłem przed chwilą mówić czyli że te wartości mierzone są niezależne od całego szeregu
+Prediction:  Teraz jakby przejawem tego, że to jest tak jakby na klinie taką, o znaką tego, że to jest efekt typologiczne, co, a czym przed chwilą, mówić, czyli, że te wartości mierzone są niezależne całego szeregu.
+CER: 0.1934
+WER: 1.1351
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_29.wav
+Reference: zmiennych w układzie czy rzeczy które w eksperymentach mogą być inne a tak naprawdę ważne są takie rzeczy trochę jak z tych węzłów czyli na przykład jak się przyczepi tędy miernik prądu a tędy miernik napięcia to jak też są skrzyżowane te druty czyli to jest w środku tak ta kwadra to jest ta próbka ten kawałek półprzewodnika w którym płynie prąd jak są rzeczy tylko ważne żeby były skrzyżowane te druty to wtedy wychodzi taki wykres
+Prediction:  Zmiennych w okładzie, czyli rzeczy, które w eksperymentach mogą być inne. A tak naprawdę, właże są takie rzeczy trochę jak z tych wejansów. Czyli na przykład jak się przyczepi ten myarnik prądu, a ten myarnik napięcia, to jak to są skrzyżowane te druty, czyli to jest środko tak ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta próbka, ten kwadrat jest ta prób
+CER: 2.1175
+WER: 11.9221
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_3.wav
+Reference: no tutaj siedząc obok ryszarda to trudno y powiedzieć coś coś innego w czasach kiedy kolarstwo dzieliło się na amatorskie i na zawodowe no takie były realia
+Prediction:  Tutaj w siedząc obok reszarda, trudno powiedzieć coś innego w czasach, kiedy kolastwo dzieliło się na amatorzki na zawodowym. Na takie były realia.
+CER: 0.1731
+WER: 1.0370
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_30.wav
+Reference: a jak druty są wzdłuż to wtedy wychodzi tak jak ten drugi wykres czy ważna jest tylko topologia podłączenia
+Prediction:  a jak dróty są z dłuż, to wtedy wychodzi tak jak ten drugi wekrasti. Włażnę z tylko topologię podłączania.
+CER: 0.1963
+WER: 1.0526
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_31.wav
+Reference: i prawie nic więcej dobra teraz to że to jest yyy tak skwantowane to oczywiście ma pod sobą pod spodem topologię czyli pewien fajny kawałek matematyki i to trudno jest trochę pewnie to to nie jest takie łatwe do do opowiadania nawet między fizykami natomiast chodzi o to że zostało okazało się że to tą podstawą tego dokładnego kwantowania czyli tej tej powtarzalności czy tej uniwersalność tego efektu jest to że
+Prediction:  i prawie nic więcej. Teraz to, że to jest tak skwantowany, to oczywiście ma pod sobą pod spodem topologię, czyli pewien fajny kawałek matematyki. I to trudne jest trochę pewnie, to nie jest takie łatwe do domu, powiadania nawet między fizykami. Natomiast chodzi o to, że został okazało się, że to ten podstawą tego dokładnego kwantowania, czyli tej powtarzalności, czyli tej uniwersalności, tego efektu jest to, że
+CER: 0.1090
+WER: 0.6197
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_32.wav
+Reference: w tak zwanej przestrzeni pędów czyli w przestrzeni stanów które elektrony kwantowych stanów mogą zajmować można wyróżnić pewną powierzchnię to jest powierzchnia właśnie w tej efektywnej wydumanej przestrzeni którą elektrony zajmują i ta powierzchnia może być zakrzywiona jak jest zakrzywiona w nietrywialny sposób to wtedy się nie da wyprostować jak by się eksperyment nie zmieniał czyli krzywizna pewna cecha krzywizny zostaje stała i znowu jedziemy do twierdzenia które jest stałym twierdzeniem z matematyki kiedyś na pewno to było fantastyczne odkrycie teraz może to jest dość intuicyjne że jak mamy pewną
+Prediction:  Tak zwanej przestrzeni pędów, czyli w przestrzeni stanów, które elektrony w kwantowych stanów, które w którym ksenem mogą zajmować, można wyróżnić pewną powierzchnię, to jest powierzchnia właśnie w tej efektywnej, wydumany i przestrzeni, którą elektrony zajmują i to powierzchnia może być zakrzywiona, jak jest zakrzywniła na w nietywialny sposób to wtedy się nie dały prostować jakby się eksperyment nie zmienia. Czyli krzywizzna, pewnie co, jak przywiznsta jest tała. Iznowu jedziemy do twierdzenia, które jest stały w interdynie z matematyki, kiedyś na pewno to było fantastyczne odkrycie teraz, może to jest dosyń tuicyjne,
+CER: 0.1711
+WER: 1.1667
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_33.wav
+Reference: powierzchnię na przykład jakieś takie coś powyginane jak jajko i będziemy teraz to wyginać w sposób ciągły jakbyśmy nie wyginęli to da się wyliczyć taką liczbę która się nie zmienia to jest akurat całka z krzywizny gałsa całka po konturze z krzywizny geodezyjnej teraz ten mechanizm to się nazywa charakterystyka jurera a więc parametr
+Prediction:  Powierzchnię, np. jakieś takie coś powyginane agyeko. I będziemy teraz to wyginać w osób ciągu jakbyśmy nie wyginali to da się wyliczyć taką liczbę, która się nie zmienia. To jest ogratna całka z krzywizny gausa, całka pokontu, że z krzywizny gaody zainnej, razem chodzi o coś z wacharkterystyka ilera, pewien parametr
+CER: 0.2209
+WER: 1.3519
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_34.wav
+Reference: takiej takiej powierzchni i na przykład taka powierzchnia czyli torus ma tę tę liczbę gie w tym wzorze jeden a taka powierzchnia jak jak jak sfera ma zero i z jednej na drugą się nie da
+Prediction:  Takie i powierzchni. I np. taka powierzchnia, czyli to rozma ta liczba gie tutaj w tym wzorze jeden, a taka powierzchnia jak zfera ma zero. Widz jednej na drugą się nie da.
+CER: 0.2649
+WER: 1.3333
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_35.wav
+Reference: przejść w sposób ciągły i dlatego właśnie ten ten topologiczny parametr jest inny w obu przypadkach i teraz dla powierzchni zamkniętych ten parametr musi być nie tylko że jest określony jest niezmienny ale jest zawsze dyskretny zero jeden dwa trzy i tak dalej i się okazuje że te powierzchnie które się pojawiają w opisie efektów hola są jeden a nie zero i to powoduje że się wszystko kwantuje czy jest pewna taka geometryczna taka interpretacja i pewna topologia nietrywialna która tłumaczy to cofnijmy się tutaj dlaczego w eksperymencie
+Prediction:  Przejść w posób ciągu i dlatego właśnie ten typologiczny paramet jest inny w obu przypadkach. I teraz dla powierzchni zamkniętych ten paramet musi być nie tylko, że jest określony i jest niezmienny, ale jest zawsze dyskretny. Zero jeden dwa trzy i tak dalej. I się okazuje, że te powierzchni, które się pojawiają w opisie efektu hola, są jedyna, nie zero i to powoduje, że się wszystko kwantuje. Czyli jest pewna taka geometryczna, taka interpretacja i pewna topologia nie triwialna, która tłumaczy to, co w niemie się tutaj dla czego w ekfermęcie.
+CER: 0.0985
+WER: 0.5909
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_36.wav
+Reference: bardzo rzeczywiste wychodzą zaskakujące yyy rzeczy dobra i teraz eksperymenty ja nie robię eksperymentów no ale tam jest jedna fajna rzecz że w tej dziedzinie pojawia się taka nowa cząstka zwykle jak się nowe cząstki szuka to są jakieś tam fizyka wysokich energii jakieś teraz hiks ostatnio był odkryty tu też się pojawia nowa cząstka tak zwany złożony hermel ale to jest fizyka niskich energii więc tutaj trudność jest raczej taka żeby zrobić silne pole magnetyczne albo bardzo niską temperaturę albo bardzo dobrą warstwę dobrej jakości
+Prediction:  Bardzo rzeczywistym wychodzą, zeskakujące rzecz. Teraz eksperymenty, ja nie robię eksperymentów, ale tam jest jedna fajna rzecz, że w tej dziedzinie pojawia się taka nowa cząska. Zwykle jak się nowe cząski szuka, to są jakieś tam fizyka wysoki chenergii, jakieś teraz hik, są statne błodkryty. Tutaj się pojawia nowa cząska, tak zwany złożony, fermion, ale to jest fizyka. Niskich chenergii, więc tutaj trudno się z raczej taka, żeby zrobić silne. Pole magnetyczne albo bardzo niską temperaturę, albo bardzo dobrą warstwę, dobre jakości.
+CER: 0.1359
+WER: 0.8372
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_37.wav
+Reference: to jest wszystko fajne i ciekawe trochę jakby mówię yyy z fizyki eksperymentalnej teraz my żeby jako teoretycy mamy swoje problemy żeby to samo opisywać i głównie to jest to co mówił przed chwilą pan profesor bartkowiak to znaczy że jest więcej niż dwie cząstki czy to są klasyczne czy to są kwantowe to jesteśmy w czarnej dziurze to znaczy że nie można wyć zrobić takiego układu równań żeby go rozwiązać analitycznie także wszystko właściwie co jest więcej niż dwa ciała to nagle od liczby ciał zależy wykładniczo zaczyna rosnąć
+Prediction:  To jest wszystko fajne i ciekawy, trochę jakbym w fizyki eksperimentalnej, to jest my, żeby jako teoretycy na my swoje problemy, żeby to samo opisywać i głównie to jest to, co mówi przez film Pan Professor Bartkowik, to znaczy, że jak jest więcej niż dwie cząski, czy to są klasyczne, czy to są kwantowe, to jesteśmy w czarnej dziurze. To znaczy, że nie można wyrobić takiego układu równanerze, by go rozwiązać analityczny. Także wszystko właściwie, co jest więcej niż dwa ciała, to nagradli, żeby ciała zależy wykładniczo, zaczyna rosnąć z
+CER: 0.1474
+WER: 0.8556
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_38.wav
+Reference: żadne takie nie działają układ jest nie da się nic wymyślić i trzeba rozwiązywać równania szredingera brutalnie co oznacza że się po prostu diagonalizuje macierze te macierzystą są często bardzo duże dlatego bardzo się radujemy czy raduję że mamy duży komputer teraz dlaczego to jest w ogóle ważne czyli będą pojawiać się w tych układach cząstki które są zupełnie egzotyczne nieznane takich normalnych trzech wymiarów ja już pomijam cząstki typu piłka ale cząstki typu elektron albo foton
+Prediction:  W żadnym takie nie działają, okłat jest nie da się nic wymyślić i trzeba rozwiązać również do tego, że będzie się po prostu djagona, ale i złymacie, że są często bardzo druże, dlatego bardzo się radujemy, czy raduje, że mamy dużo komputer. Teraz dlaczego to jest w ogóle ważne, czyli będą pojawiać się w tych układach cząskich, które są zupełnie egzotyczne, nieznane takich normalnych trzech wymiaru, ponieważ pomijam cząskich typu piłka, ale cząskich typu elektron albo foton,
+CER: 0.1947
+WER: 1.2208
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_39.wav
+Reference: i są w pewnym sensie nudne stare i i nieciekawe natomiast w tych układach typu ciecze kwantowe pojawiają się może się raz cofnę ciecz pojawia się powstaje w ten sposób że w pewnych warunkach elektrony kondensują do cieczy czyli tworzą układ cieczowy mimo że to są elektrony a nie jakieś tam atomy czy cząsteczki chemiczne i teraz jak się doda elektron do takiej cieczy jak ciecz jest odpowiednia
+Prediction:  są w pewnym sensie nudne stary i nie ciekawę, natomiast w tych układach ty płcieczek fantowe pojawiają się raz cofne, cięż pojawia się powytaje w ten sposób, że w pewnych warunkach elektrony kondensują do cieczy, czyli tworzą układ cieczowi, może to są elektrony, a nie jakś tam atomy czy czynstyczki chemiczne. I teraz jak się doda elektrony takiej cieczy, jak cięczy jest odpowiednia,
+CER: 0.1266
+WER: 0.7500
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_40.wav
+Reference: to on nie funkcjonuje już w niej jako taka bryłka ani też nie nie wtapia się tak zupełnie bez śladu w tę cieć tylko nagle on się pojawia się w postaci wzbudzeń których każde jest ułamkiem elektronu
+Prediction:  To on nie funkcjonuje, że nie jako taka bręuka, a nie wtapia się tak zupełnie bezśladów, to tylko nagle on się pojawia się w postaci w zbudzeń, który w każdym łamkiem elektronu.
+CER: 0.2183
+WER: 1.1351
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_41.wav
+Reference: to są nowe cząstki nie istnieją w próżni one istnieją tylko w tej cieczy jako wzbudzenia czyli to są te różne kwazjicząstki elementarne wzbudzenia które naszą ładunek i nagroda nobla w dziewięćdziesiątym ósmym roku była między innymi za to że te wzbudzenia są egzotyczne na przykład mają ułamkowy ładunek elektryczny dobra to jeszcze nie koniec to że mają ułamkowy ładunek elektryczny to jest ten powiedzmy drobiazg yyy natomiast one mają też historię trajektorii czy okazuje się że ponieważ one żyją tylko w dwóch wymiarach to wszystkie takie twierdzenia z fizyki że są tylko bozony albo fermiony czyli że statystyka cząstek jest określon
+Prediction:  To są nowe cząskie, nie istnieją w próżni. One istnieją tylko w tej ciecie, czy jako wzbudzenia, czyli to jest nogonek fazyczą, skieramentarny wzbudzeniach, które wnoszą ładunek i nagroda nogla w 90-tymu roku była miedymi za to, że te wzbudnia są egzotyczne, np. mają ułamkowy ładunek elektryczne. No bo to jeszcze nie koniec, to, że mają ułamkowalu radnecha wysztoń to jest tam powiedzmy. Drobiask? Natomiast one mają też historię trajektori. Czołka zwiększa, że ponieważ one żyją tylko dwóch wymiarach, to wszystkie takie twierdenia z fizyki, że są tylko bozone albo fermiony, czyli że statystyka cząstek jest określa
+CER: 0.2160
+WER: 1.3431
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_42.wav
+Reference: tylko na dwa możliwe sposoby wszystkie te twierdzenia te argumenty okazuje się upadają w dwóch wymiarach i otwiera się możliwość która jest realizowana w tych w tych układach żeby cząstki w swoim stanie pamiętały którędy w dane miejsca dojechały albo inaczej mówiąc jak startujemy z jakiegoś układu trzech cząstek które są w trzech miejscach one wykonują teraz w czasie jakąś tam ruch przylatują z powrotem te same miejsca to być może ten stan na końcu jest inny niż ten stan na początku mimo że cząstki są w tych samych miejscach okej skoro tak
+Prediction:  Tylko na dwa możliwe sposoby wszystkie te twierdzenia targuenty ukazuje się upadają w dół wymiarach i otwiera się możliwość, które jest realizowana w tych układach, żeby cząski w swoim stanie pamiętały, które dany miejsca dojechały. Albo inaczej mówiąc, jak startujemy z jakiegoś układu trzech cząstek, które są w trzech miejscach, one wykonują teraz w czasie jakąś tam ruch, przyjatując powrotem na te same miejsca, to być może ten stan na końcu, jest inny niż ten stan na początku, w tym samych miejscach.
+CER: 0.1413
+WER: 0.8172
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_43.wav
+Reference: to nagle pomijając
+Prediction:  To nagle pomijając.
+CER: 0.1667
+WER: 0.6667
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_44.wav
+Reference: czy doleciały do tego miejsca takimi tak się kręcąc wokół siebie czy siak się kręcąc wokół siebie to te stany mogą być różne i teraz
+Prediction:  czy doleciały do tego miejsca. Takimi tak się kręcą z wokół siebie, czy siak się kręcą z wokół siebie, to to wstany mogą być różne. I teraz...
+CER: 0.1212
+WER: 0.6000
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_45.wav
+Reference: po co to jest no więc jest taka nadzieja że kiedyś będzie z tego komputer kwantowy czyli czyli tak użycie takich pamięci tych tych dróg którymi cząstki dojechały w dane miejsca jako elementu informacji
+Prediction:  Po co to jest? Jest taka nadzieja, że kiedyś będzie z tego komputer kwantowy, czyli tak użycie takich pamięci tych drug, którymi cząski do jahły w dane miejsca jako elementu informacji.
+CER: 0.1542
+WER: 0.8824
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_46.wav
+Reference: czyli wykorzystanie tych cząstek z pamięcią jako zapisu czy stan informacji jest tam zero czy jeden prawda czy w lewo czy w prawo można na tym myśleć o zbudowaniu komputera kwantowego czy komputer z grubsza działa tak że ma na wejściu jakieś dane czy jakiś tam układ potencjałów albo jakieś maszyny tam po pokręceń jakiś tam korbek czy coś takiego to jest stan wejściowy obliczenie polega na tym że to się puszcza w ruch czyli zachodzi proces zgodny z zasadami przyrody czyli zasadami tam fizyki chemii i on przebiega sobie i w zależności od tego co było na wejściu to oczywiście on tak przebiega
+Prediction:  czyli korzystanie tych cząstek z pamięcią jako zapisu czy stan informacji jestem zero czy jeden prawda czyś lewoczy prawo można na tym myśleć o zbudowaniu komputerach kwantowego. Ślik komputer jest grubsza działa tak, że ma na wejściu jakieś dane czy jakieś tam układ potencjału, falb jakieś maszyn tam po kręce, jakieś tam korbek czy coś takiego. To jest stan wejściowy obliczenie polega na tym, że to się puszcza w ruchcze i zachodzi proces godny zasadami przyrody czy i zasadami tam fizyki chemii i on przebiega sobie i zależności od tego co było na wejściu, to oczywiście tak przebiega
+CER: 0.0822
+WER: 0.4615
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_47.wav
+Reference: jeśli porównacie taki będzie wynik i ten wynik się odczytuje no i to jest tak działa komputer w rzeczywistości ale jeżeli się zakoduje informację w sposób kwantowy czyli na stanie kwantowym a nie klasycznym to wtedy jak mówiłem jest sens w ogóle myśleć o superpozycji stanów czyli można zakodować stan wejściowy jako super pozycję zera jedynki i wtedy jeżeli ewolucja przechodzi zgodnie z pewnymi tam prawami że to jest rewolucja odpowiednio nie nie nie nieodwracalna co się da zrobić to wtedy okazuje się że wynikiem obliczania będzie superpozycja
+Prediction:  i to jest takie będzie wynik. I ten wynik się odczytuje, to jest takie łakomputer w rzeczywistości. Ale jeżeli się zakoduje informacje z osób kwantowy, czyli na stanie kwantowy ma nieklasycznym, to wtedy jak mówię, jest sens w ogóle myśleć o super pozycji stanów, czyli można zakodować stan wejściowy jako super pozycję zera i jedynki. I wtedy jeżeli ewolucja przechodzi zgodnie z pewnym i tam prawa mi, że to jest to ewolucja odpowiednio nie odwracalna, co się da zrobić, to wtedy okazuje się, że wynikiem obliczania będzie super pozycja
+CER: 0.1241
+WER: 0.7727
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_48.wav
+Reference: a w takim razie jeżeli tylko dostatecznie tutaj dużo się cyfr jakby wpisze to może być w zasadzie dowolnie zrównoleglane obliczanie czyli są pewne zagadnienia niewiele ale są pewne zagadnienia które w zasadzie mogą być nieskończenie zrównoleglone na hipotetycznym komputerze kwantowym
+Prediction:  A w takim razie jeżeli tylko dostatecznie tutaj dużo się cyfry jak by wpisze to może być w zasadzie dowolnie z równoleglane obliczania. Czyli są pewne zagadnienia, nie wiele, ale są pewne zagadnienia, które w zasadzie mogą być nieskończenie z równoleglane na hipotetyszym komputerze kwantowym.
+CER: 0.0599
+WER: 0.3902
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_49.wav
+Reference: problem zawsze jest z tak zwaną dekoherencją czyli że jeżeli yyy stan ma nie nie jest ściśle ma zdefiniowany jest zero albo jeden tylko wszystkie są pośrednie możliwości y są elementem informacji to spontaniczne
+Prediction:  Problem zawsze jest z takswaną deko-cherencją, czyli że jeżeli stan, nie jest ścisle, ma zdefiniowane jest zero albo jeden tylko wszystkie są pośrednie możliwości są elementem informacji, to spontaniczne
+CER: 0.1137
+WER: 0.6765
+-----------------------------------------------Reference: był wyścig dookoła yyy paryż nicea gdzie gdzie polacy no prawie z marszu ze śniegu no tak bo to marzec
+Prediction:  Był wyścig do okola, parycznicę, gdzie jest się Polacy do prawie z marszu, bo prześwięk. No tak, bo to marzęc.
+CER: 0.3529
+WER: 1.7500
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_50.wav
+Reference: i utrata informacji czyli ucieczka od zera w stronę jedynki takie lekkie zaburzenia wszystko w zasadzie mogłyby zrujnować ale właśnie te cząstki z pamięcią wydają się tu być świetnym rozwiązaniem żeby to wszystko wyeliminować
+Prediction:  utrata informacji czy ucieczka od zera w stronę jedynki takie lekkie zaburzenia, wszystko wysadzie mogłyby zrójnować, ale właśnie to cząski z pamięcią wydają się tu być świetnym rozwiązaniu, żeby to wszystko wyeliminować.
+CER: 0.0622
+WER: 0.4412
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_6.wav
+Reference: wystartowali w tym wyścigu no to ryszard w orleanie yyy potrafił finiszować na drugim miejscu więc można założyć że dużej różnicy nie było z nakono
+Prediction:  wystarczowali w tym wyściglono to reszart w orlanie. Potrafi ufinisz szawać na drugim miejscu, więc można założyć za dużej różnicy nie było za pomoc.
+CER: 0.1905
+WER: 1.0800
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_7.wav
+Reference: ci yyy amatorzy yyy ci zawodowcy którzy wcześniej byli amatorami
+Prediction:  a macerze zawodosty, którzy wcześniej byli amatorami.
+CER: 0.3125
+WER: 2.1000
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_8.wav
+Reference: yyy regularnie przegrywali z naszymi kolarzami później tak się stało że kolarstwo zawodowe połączyło się z kolarstwem am amatorskim
+Prediction:  regularnie przegrywali z naszymi koleżami. Później tak się stało, że koleklu zawodowy połączyło się z koleklu, mam amatorzkiem.
+CER: 0.1985
+WER: 1.4211
+--------------------------------------------------
+
+--------------------------------------------------
+File: sample_9.wav
+Reference: i to zbiegło się akurat z transformacją ustrojową y w polsce i całym bloku wschodnim
+Prediction:  i to zbiegło się akurat z transformacji ustrojową w Polsce i całym bloku w skodnim.
+CER: 0.1071
+WER: 0.5333
+--------------------------------------------------
+
