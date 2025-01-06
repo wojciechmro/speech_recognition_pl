@@ -1,3 +1,7 @@
 __pycache__/
 venv/
 notes.md
+.venv/
+datasets/
+testing.ipynb
+datasets_processed/
