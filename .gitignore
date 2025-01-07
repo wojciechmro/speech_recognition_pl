@@ -1,6 +1,7 @@
 __pycache__/
 venv/
 notes.md
+.DS_Store
 .venv/
 datasets/
 testing.ipynb
