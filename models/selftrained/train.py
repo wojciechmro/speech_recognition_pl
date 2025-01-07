@@ -14,24 +14,15 @@ from lstm import ASRModel
 # -- Creating dataloader
 
 ds = load_dataset(
-    path="amu-cai/pl-asr-bigos-v2",
-    name="mozilla-common_voice_15-23",
-    split="train"
+    path="amu-cai/pl-asr-bigos-v2", name="mozilla-common_voice_15-23", split="train"
 )
 
 n_mels = 80
 train_dataset = ASRDataset(
-    dataset=ds,  
-    sample_rate=16000, 
-    n_mels=n_mels,
-    max_audio_length=4,
-    min_audio_length=0
-    )
+    dataset=ds, sample_rate=16000, n_mels=n_mels, max_audio_length=4, min_audio_length=0
+)
 train_loader = DataLoader(
-    train_dataset,
-    batch_size=16,
-    shuffle=True,
-    collate_fn=collate_fn
+    train_dataset, batch_size=16, shuffle=True, collate_fn=collate_fn
 )
 
 # Model hyperparameters
@@ -58,27 +49,31 @@ def train():
             log_probs = torch.log_softmax(outputs, dim=-1)
             if not is_printed:
                 with torch.no_grad():
-                    print("transcripts:", greedy_decoder(transcripts[0:2], train_dataset.inv_vocab))
+                    print(
+                        "transcripts:",
+                        greedy_decoder(transcripts[0:2], train_dataset.inv_vocab),
+                    )
                     preds = torch.argmax(log_probs, dim=-1)
                     print("preds:", greedy_decoder(preds[0:2], train_dataset.inv_vocab))
                     is_printed = True
             # Compute loss
             loss = criterion(
-                log_probs.permute(1, 0, 2), # CTC expects (time, batch, num_classes)
+                log_probs.permute(1, 0, 2),  # CTC expects (time, batch, num_classes)
                 transcripts,
                 audio_lengths,
-                transcript_lengths 
+                transcript_lengths,
             )
 
             # Backward pass
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-        
+
         print(f"Epoch {epoch + 1}, Loss: {loss.item()}")
         is_printed = False
 
     torch.save(model.state_dict(), "model_state_dict.pth")
+
 
 if __name__ == "__main__":
     train()

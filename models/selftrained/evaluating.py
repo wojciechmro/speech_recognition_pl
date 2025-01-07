@@ -11,7 +11,7 @@ from dataset import ASRDataset, collate_fn, greedy_decoder, get_inv_vocab
 val_ds = load_dataset(
     path="amu-cai/pl-asr-bigos-v2",
     name="mozilla-common_voice_15-23",
-    split="validation"
+    split="validation",
 )
 
 with open("vocab.json", "r") as f:
@@ -22,18 +22,15 @@ inv_vocab = get_inv_vocab(vocab_dict)
 n_mels = 80
 
 validation_dataset = ASRDataset(
-    dataset=val_ds, 
-    sample_rate=16000, 
+    dataset=val_ds,
+    sample_rate=16000,
     n_mels=n_mels,
     max_audio_length=4,
     min_audio_length=0,
-    vocab_dict=vocab_dict
+    vocab_dict=vocab_dict,
 )
 validation_loader = DataLoader(
-    validation_dataset,
-    batch_size=16,
-    shuffle=True,
-    collate_fn=collate_fn
+    validation_dataset, batch_size=16, shuffle=True, collate_fn=collate_fn
 )
 
 num_classes = len(vocab_dict) + 1
@@ -42,6 +39,7 @@ model = ASRModel(n_mels, num_classes)
 model.load_state_dict(torch.load("model_state_dict.pth", weights_only=True))
 
 # -- Evaluation --
+
 
 def evaluate(model, val_loader, criterion):
     model.eval()
@@ -67,7 +65,7 @@ def evaluate(model, val_loader, criterion):
                 log_probs.permute(1, 0, 2),
                 transcripts,
                 audio_lengths,
-                transcript_lengths
+                transcript_lengths,
             )
             total_loss += loss.item() * audio.size(0)
             total_samples += audio.size(0)
