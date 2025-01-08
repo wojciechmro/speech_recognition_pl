@@ -25,17 +25,17 @@ def get_model_config(model_type: WhisperModel):
     configs = {
         WhisperModel.STANDARD: (
             "openai/whisper-tiny",
-            "whisper_tiny_no_finetuning_results.txt",
+            "whisper_tiny_no_finetuning.txt",
             "Standard Model",
         ),
         WhisperModel.SUBSET_FINETUNED: (
             "models/finetuned/whisper_finetuned_tiny",
-            "whisper_tiny_subset_results.txt",
+            "whisper_tiny_finetuned_on_subset.txt",
             "Subset Fine-tuned Model",
         ),
         WhisperModel.FULL_FINETUNED: (
             "models/finetuned/whisper_finetuned_tiny_full",
-            "whisper_tiny_full_results.txt",
+            "whisper_tiny_finetuned_on_full_dataset.txt",
             "Full Dataset Fine-tuned Model",
         ),
     }
@@ -92,7 +92,7 @@ def evaluate_whisper_transcriptions(model_type: WhisperModel):
     """
     # Setup paths
     validation_dir = os.path.join("ETL", "datasets", "validation")
-    output_dir = os.path.join("evaluation_results")
+    output_dir = os.path.join("models_eval", "logs_of_results")
 
     # Get model configuration
     model_path, output_filename, model_description = get_model_config(model_type)
