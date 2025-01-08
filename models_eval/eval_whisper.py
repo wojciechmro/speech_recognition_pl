@@ -1,7 +1,5 @@
-import os
 from enum import Enum
 from transformers import WhisperProcessor, WhisperForConditionalGeneration
-import torch
 import librosa
 import numpy as np
 from models_eval.evaluation_metrics import calculate_CER, calculate_WER
