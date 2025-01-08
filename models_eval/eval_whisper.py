@@ -16,11 +16,11 @@ def get_model_config(model_type: WhisperModel):
     """
     Get model configuration based on the selected model type
 
-    Parameters:
-    model_type (WhisperModel): Enum value indicating which model to use
+    Args:
+        model_type (WhisperModel): Enum value indicating which model to use
 
     Returns:
-    tuple: (model_path, output_file_name, model_description)
+        tuple: (model_path, output_file_name, model_description)
     """
     configs = {
         WhisperModel.STANDARD: (
@@ -46,13 +46,13 @@ def transcribe_polish_audio(audio_path, processor, model):
     """
     Transcribe Polish audio using Whisper tiny model (standard or fine-tuned)
 
-    Parameters:
-    audio_path (str): Path to the audio file
-    processor: WhisperProcessor instance
-    model: WhisperForConditionalGeneration instance
+    Args:
+        audio_path (str): Path to the audio file
+        processor: WhisperProcessor instance
+        model: WhisperForConditionalGeneration instance
 
     Returns:
-    str: Transcribed text
+        str: Transcribed text
     """
     # Load and preprocess audio
     audio, sr = librosa.load(audio_path, sr=16000)
@@ -87,8 +87,8 @@ def evaluate_whisper_transcriptions(model_type: WhisperModel):
     """
     Evaluate Whisper transcriptions on all WAV files in the validation dataset
 
-    Parameters:
-    model_type (WhisperModel): Enum value indicating which model to use
+    Args:
+        model_type (WhisperModel): Enum value indicating which model to use
     """
     # Setup paths
     validation_dir = os.path.join("ETL", "datasets", "validation")

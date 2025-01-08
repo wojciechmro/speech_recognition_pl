@@ -10,10 +10,17 @@ from tqdm import tqdm
 
 class WhisperCustomDataset(Dataset):
     def __init__(self, data_dir):
+        """
+        Initialize the WhisperCustomDataset.
+
+        Args:
+            data_dir (str): Directory containing the dataset.
+        """
         self.data_dir = data_dir
         self.mel_files = [
             f for f in os.listdir(data_dir) if f.endswith("_log_mel_spectrogram.npy")
         ]
+        # Sort the mel files by the number in the filename
         self.mel_files.sort(key=lambda x: int(x.split("_")[1]))
         self.transcript_files = [
             f"transcription_{i}.txt" for i in range(len(self.mel_files))
@@ -23,28 +30,51 @@ class WhisperCustomDataset(Dataset):
         return len(self.mel_files)
 
     def __getitem__(self, idx):
+        """
+        Get an item from the dataset.
+
+        Args:
+            idx (int): Index of the item to get.
+
+        Returns:
+            dict: Dictionary containing the input features and labels.
+        """
         mel_path = os.path.join(self.data_dir, self.mel_files[idx])
         mel = np.load(mel_path)
         transcript_path = os.path.join(self.data_dir, self.transcript_files[idx])
         with open(transcript_path, "r") as f:
             transcript = f.read().strip()
+        # Convert the mel spectrogram to a PyTorch tensor
         mel_tensor = torch.from_numpy(mel).float()
         return {"input_features": mel_tensor, "labels": transcript}
 
 
 def collate_fn(batch):
+    """
+    Pad the input features to a fixed length of 3000.
+
+    Args:
+        batch (list): List of dictionaries containing the input features and labels.
+
+    Returns:
+        dict: Dictionary containing the input features and labels.
+    """
     input_features = [item["input_features"] for item in batch]
     labels = [item["labels"] for item in batch]
     processed_features = []
     for feat in input_features:
+        # Trim the input features to a fixed length of 3000
         if feat.shape[1] > 3000:
             processed_feat = feat[:, :3000]
+        # Pad the input features to a fixed length of 3000
         elif feat.shape[1] < 3000:
             padding = torch.zeros((feat.shape[0], 3000 - feat.shape[1]))
             processed_feat = torch.cat([feat, padding], dim=1)
+        # If the input features are already of the correct length, keep them as is
         else:
             processed_feat = feat
         processed_features.append(processed_feat)
+    # Stack the processed features into a single tensor
     input_features = torch.stack(processed_features)
     return {"input_features": input_features, "labels": labels}
 
@@ -89,7 +119,6 @@ def train_model(train_dataset, output_dir):
             progress_bar.set_postfix({"loss": loss.item()})
         avg_loss = total_loss / len(train_loader)
         print(f"Epoch {epoch+1} - Average Loss: {avg_loss:.4f}")
-    output_dir = "models/finetuned/whisper_finetuned_tiny"
     save_finetuned_model(model, processor, output_dir)
 
 
