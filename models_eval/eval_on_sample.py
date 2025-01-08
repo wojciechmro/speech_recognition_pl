@@ -1,5 +1,5 @@
 import os
-from evaluation_metrics import calculate_CER, calculate_WER
+from eval_metrics import calculate_CER, calculate_WER
 
 reference_path = os.path.join("..", "explore_datasets", "text_out", "transcription.txt")
 predicted_path = os.path.join(

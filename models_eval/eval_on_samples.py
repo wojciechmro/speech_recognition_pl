@@ -1,5 +1,5 @@
 import os
-from evaluation_metrics import calculate_CER, calculate_WER
+from eval_metrics import calculate_CER, calculate_WER
 
 cer_list = []
 wer_list = []

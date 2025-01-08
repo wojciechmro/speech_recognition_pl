@@ -2,7 +2,7 @@ from enum import Enum
 from transformers import WhisperProcessor, WhisperForConditionalGeneration
 import librosa
 import numpy as np
-from evaluation_metrics import calculate_CER, calculate_WER
+from eval_metrics import calculate_CER, calculate_WER
 import os
 
 
