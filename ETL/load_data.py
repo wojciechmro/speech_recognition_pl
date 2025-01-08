@@ -28,48 +28,27 @@ def save_reference_text(text, file_path):
         f.write(text)
 
 
+def process_split(split_name, output_dir):
+    print(f"Downloading {split_name} data for {BIGOS_DATASET} with config {CONFIG}...")
+    dataset = load_dataset(BIGOS_DATASET, CONFIG, split=split_name)
+
+    for i, record in enumerate(dataset):
+        audio_array = record["audio"]["array"]
+        sampling_rate = record["audio"]["sampling_rate"]
+        ref_orig = record["ref_orig"]
+
+        audio_file_path = os.path.join(output_dir, f"sample_{i}.wav")
+        text_file_path = os.path.join(output_dir, f"transcription_{i}.txt")
+
+        save_audio_sample(audio_array, sampling_rate, audio_file_path)
+        save_reference_text(ref_orig, text_file_path)
+
+
 def download_and_process_datasets():
-    print(f"Downloading train data for {BIGOS_DATASET} with config {CONFIG}...")
-    bigos_train = load_dataset(BIGOS_DATASET, CONFIG, split="train")
+    splits = [("train", TRAIN_DIR), ("validation", DEV_DIR), ("test", TEST_DIR)]
 
-    for i, record in enumerate(bigos_train):
-        audio_array = record["audio"]["array"]
-        sampling_rate = record["audio"]["sampling_rate"]
-        ref_orig = record["ref_orig"]
-
-        audio_file_path = os.path.join(TRAIN_DIR, f"sample_{i}.wav")
-        text_file_path = os.path.join(TRAIN_DIR, f"transcription_{i}.txt")
-
-        save_audio_sample(audio_array, sampling_rate, audio_file_path)
-        save_reference_text(ref_orig, text_file_path)
-
-    print(f"Downloading dev data for {BIGOS_DATASET} with config {CONFIG}...")
-    bigos_dev = load_dataset(BIGOS_DATASET, CONFIG, split="validation")
-
-    for i, record in enumerate(bigos_dev):
-        audio_array = record["audio"]["array"]
-        sampling_rate = record["audio"]["sampling_rate"]
-        ref_orig = record["ref_orig"]
-
-        audio_file_path = os.path.join(DEV_DIR, f"sample_{i}.wav")
-        text_file_path = os.path.join(DEV_DIR, f"transcription_{i}.txt")
-
-        save_audio_sample(audio_array, sampling_rate, audio_file_path)
-        save_reference_text(ref_orig, text_file_path)
-
-    print(f"Downloading test data for {BIGOS_DATASET} with config {CONFIG}...")
-    bigos_test = load_dataset(BIGOS_DATASET, CONFIG, split="test")
-
-    for i, record in enumerate(bigos_test):
-        audio_array = record["audio"]["array"]
-        sampling_rate = record["audio"]["sampling_rate"]
-        ref_orig = record["ref_orig"]
-
-        audio_file_path = os.path.join(TEST_DIR, f"sample_{i}.wav")
-        text_file_path = os.path.join(TEST_DIR, f"transcription_{i}.txt")
-
-        save_audio_sample(audio_array, sampling_rate, audio_file_path)
-        save_reference_text(ref_orig, text_file_path)
+    for split_name, output_dir in splits:
+        process_split(split_name, output_dir)
 
 
 def main():
