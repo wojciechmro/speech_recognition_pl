@@ -3,9 +3,7 @@ from transformers import WhisperProcessor, WhisperForConditionalGeneration
 import librosa
 import numpy as np
 from models_eval.evaluation_metrics import calculate_CER, calculate_WER
-
-# from evaluation_metrics import calculate_CER, calculate_WER
-from pathlib import Path
+import os
 
 
 class WhisperModel(Enum):
@@ -93,19 +91,19 @@ def evaluate_whisper_transcriptions(model_type: WhisperModel):
     model_type (WhisperModel): Enum value indicating which model to use
     """
     # Setup paths
-    validation_dir = Path("datasets/validation")
-    output_dir = Path("evaluation_results")
+    validation_dir = os.path.join("ETL", "datasets", "validation")
+    output_dir = os.path.join("evaluation_results")
 
     # Get model configuration
     model_path, output_filename, model_description = get_model_config(model_type)
-    output_file = output_dir / output_filename
+    output_file = os.path.join(output_dir, output_filename)
 
     # Create output directory if it doesn't exist
-    output_dir.mkdir(parents=True, exist_ok=True)
+    os.makedirs(output_dir, exist_ok=True)
 
     # Load model and processor
-    processor = WhisperProcessor.from_pretrained(str(model_path))
-    model = WhisperForConditionalGeneration.from_pretrained(str(model_path))
+    processor = WhisperProcessor.from_pretrained(model_path)
+    model = WhisperForConditionalGeneration.from_pretrained(model_path)
 
     # Lists to store metrics
     all_cer = []
@@ -117,18 +115,23 @@ def evaluate_whisper_transcriptions(model_type: WhisperModel):
         f.write("=" * (len(model_description) + 21) + "\n\n")
 
         # Process each WAV file
-        # wav_files = sorted(validation_dir.glob("sample_*.wav"))
-        all_wav_files = list(validation_dir.glob("sample_*.wav"))
-        wav_files = sorted([f for f in all_wav_files if "sample_4.wav" not in str(f)])
+        all_wav_files = [
+            f
+            for f in os.listdir(validation_dir)
+            if f.startswith("sample_") and f.endswith(".wav")
+        ]
+        wav_files = sorted([f for f in all_wav_files if "sample_4.wav" not in f])
 
         for wav_file in wav_files:
             # Get corresponding transcript file
-            file_number = wav_file.stem.split("_")[1]
-            transcript_file = validation_dir / f"transcription_{file_number}.txt"
+            file_number = wav_file.split("_")[1].split(".")[0]
+            transcript_file = os.path.join(
+                validation_dir, f"transcription_{file_number}.txt"
+            )
 
             # Skip if transcript doesn't exist
-            if not transcript_file.exists():
-                print(f"Warning: No transcript found for {wav_file.name}")
+            if not os.path.exists(transcript_file):
+                print(f"Warning: No transcript found for {wav_file}")
                 continue
 
             # Get reference text
@@ -136,7 +139,9 @@ def evaluate_whisper_transcriptions(model_type: WhisperModel):
                 reference = tf.read().strip()
 
             # Get prediction
-            prediction = transcribe_polish_audio(str(wav_file), processor, model)
+            prediction = transcribe_polish_audio(
+                os.path.join(validation_dir, wav_file), processor, model
+            )
 
             # Calculate metrics
             cer = calculate_CER(reference, prediction)
@@ -148,7 +153,7 @@ def evaluate_whisper_transcriptions(model_type: WhisperModel):
 
             # Write detailed results
             f.write("--------------------------------------------------\n")
-            f.write(f"File: {wav_file.name}\n")
+            f.write(f"File: {wav_file}\n")
             f.write(f"Reference: {reference}\n")
             f.write(f"Prediction: {prediction}\n")
             f.write(f"CER: {cer:.4f}\n")
