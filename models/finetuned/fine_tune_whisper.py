@@ -56,17 +56,7 @@ def save_finetuned_model(model, processor, output_dir):
     print(f"Model and processor saved to {output_dir}")
 
 
-def main():
-    random_seed = 42
-    torch.manual_seed(random_seed)
-    random.seed(random_seed)
-    np.random.seed(random_seed)
-    train_dir = "datasets_processed/train"
-    full_dataset = WhisperCustomDataset(train_dir)
-    total_samples = len(full_dataset)
-    subset_size = int(0.4 * total_samples)
-    subset_indices = random.sample(range(total_samples), subset_size)
-    train_dataset = Subset(full_dataset, subset_indices)
+def train_model(train_dataset, output_dir):
     batch_size = 8
     train_loader = DataLoader(
         train_dataset, batch_size=batch_size, shuffle=True, collate_fn=collate_fn
@@ -101,6 +91,29 @@ def main():
         print(f"Epoch {epoch+1} - Average Loss: {avg_loss:.4f}")
     output_dir = "models/finetuned/whisper_finetuned_tiny"
     save_finetuned_model(model, processor, output_dir)
+
+
+def main():
+    random_seed = 42
+    torch.manual_seed(random_seed)
+    random.seed(random_seed)
+    np.random.seed(random_seed)
+    train_dir = os.path.join(
+        os.path.dirname(__file__), "..", "..", "ETL", "datasets_processed", "train"
+    )
+
+    # Train on subset (40% of data)
+    print("Training on subset of data...")
+    full_dataset = WhisperCustomDataset(train_dir)
+    total_samples = len(full_dataset)
+    subset_size = int(0.4 * total_samples)
+    subset_indices = random.sample(range(total_samples), subset_size)
+    subset_dataset = Subset(full_dataset, subset_indices)
+    train_model(subset_dataset, "whisper_finetuned_tiny")
+
+    # Train on full dataset
+    print("\nTraining on full dataset...")
+    train_model(full_dataset, "whisper_finetuned_tiny_full")
 
 
 if __name__ == "__main__":
