@@ -2,7 +2,7 @@ from enum import Enum
 from transformers import WhisperProcessor, WhisperForConditionalGeneration
 import librosa
 import numpy as np
-from models_eval.evaluation_metrics import calculate_CER, calculate_WER
+from evaluation_metrics import calculate_CER, calculate_WER
 import os
 
 
@@ -180,3 +180,14 @@ def evaluate_whisper_transcriptions(model_type: WhisperModel):
                     content.find("--------------------------------------------------") :
                 ]
             )
+
+
+if __name__ == "__main__":
+    # NOTE: execute the following files before running this script:
+    # - `ETL/load_data.py`
+    # - `ETL/preprocess_data.py`
+    # - `models/finetuned/fine_tune_whisper.py`
+    os.chdir(os.path.dirname(os.path.dirname(__file__)))  # go one level up
+    evaluate_whisper_transcriptions(WhisperModel.STANDARD)
+    evaluate_whisper_transcriptions(WhisperModel.SUBSET_FINETUNED)
+    evaluate_whisper_transcriptions(WhisperModel.FULL_FINETUNED)
