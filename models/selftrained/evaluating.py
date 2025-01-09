@@ -21,7 +21,7 @@ validation_dataset = ASRDataset(
     dataset=val_ds,
     sample_rate=16000,
     n_mels=n_mels,
-    max_audio_length=4,
+    max_audio_length=6,
     min_audio_length=0,
     vocab_dict=vocab_dict,
 )
@@ -58,9 +58,7 @@ def evaluate(model, val_loader, criterion):
             # Forward pass
             outputs = model(audio)
             log_probs = torch.log_softmax(outputs, dim=-1)
-            print("First transcript:", greedy_decoder([transcripts[0]], inv_vocab))
             preds = torch.argmax(log_probs, dim=-1)
-            print("First pred:", greedy_decoder([preds[0]], inv_vocab))
             # Compute loss
             loss = criterion(
                 log_probs.permute(1, 0, 2),
@@ -70,6 +68,8 @@ def evaluate(model, val_loader, criterion):
             )
             total_loss += loss.item() * audio.size(0)
             total_samples += audio.size(0)
+        print("transcript:", greedy_decoder([transcripts[0]], inv_vocab))
+        print("prediction:", greedy_decoder([preds[0]], inv_vocab))
         avg_loss = total_loss / total_samples
         return avg_loss
 

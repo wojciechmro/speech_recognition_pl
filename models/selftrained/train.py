@@ -14,7 +14,7 @@ ds = load_dataset(
 )
 n_mels = 80
 train_dataset = ASRDataset(
-    dataset=ds, sample_rate=16000, n_mels=n_mels, max_audio_length=4, min_audio_length=0
+    dataset=ds, sample_rate=16000, n_mels=n_mels, max_audio_length=6, min_audio_length=0
 )
 train_loader = DataLoader(
     train_dataset, batch_size=16, shuffle=True, collate_fn=collate_fn
@@ -25,12 +25,12 @@ num_classes = len(train_dataset.vocab_dict) + 1
 model = ASRModel(n_mels, num_classes)
 
 # Optimizer and loss
-optimizer = optim.Adam(model.parameters(), lr=1e-3)
+optimizer = optim.Adam(model.parameters(), lr=1e-4)
 criterion = nn.CTCLoss(blank=0, reduction="mean", zero_infinity=True)
 
 
 # Training loop
-def train(epochs=10):
+def train(epochs=12):
     """Train the ASR model."""
     is_printed = False  # flag to print predictions for first batch
     for epoch in range(epochs):
@@ -51,7 +51,7 @@ def train(epochs=10):
                         greedy_decoder(transcripts[0:2], train_dataset.inv_vocab),
                     )
                     preds = torch.argmax(log_probs, dim=-1)
-                    print("preds:", greedy_decoder(preds[0:2], train_dataset.inv_vocab))
+                    print("predictions:", greedy_decoder(preds[0:2], train_dataset.inv_vocab))
                     is_printed = True  # do not print predictions for subsequent batches
             # Compute loss
             loss = criterion(
@@ -70,7 +70,7 @@ def train(epochs=10):
 
 
 if __name__ == "__main__":
-    train(epochs=10)
+    train()
     with open("vocab.json", "w") as f:
         json.dump(train_dataset.vocab_dict, f)
     print("Vocabulary saved to vocab.json")
