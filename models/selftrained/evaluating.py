@@ -5,6 +5,12 @@ from datasets import load_dataset
 from lstm import ASRModel
 from dataset import ASRDataset, collate_fn, greedy_decoder, get_inv_vocab
 
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
+
+from models_eval.eval_metrics import calculate_CER, calculate_WER
+
 # Load vocabulary
 with open("vocab.json", "r") as f:
     vocab_dict = json.load(f)
@@ -49,6 +55,8 @@ def evaluate(model, val_loader, criterion):
     model.eval()  # set model to evaluation mode
     total_loss = 0.0
     total_samples = 0
+    all_cer = 0.0
+    all_wer = 0.0
     with torch.no_grad():  # disable gradient computation
         for batch in val_loader:
             audio = batch["mel_specs"]
@@ -68,13 +76,22 @@ def evaluate(model, val_loader, criterion):
             )
             total_loss += loss.item() * audio.size(0)
             total_samples += audio.size(0)
-        print("transcript:", greedy_decoder([transcripts[0]], inv_vocab))
-        print("prediction:", greedy_decoder([preds[0]], inv_vocab))
+
+            references = greedy_decoder(transcripts, inv_vocab)
+            predictions = greedy_decoder(preds, inv_vocab)
+            for i, reference in enumerate(references):
+                all_cer += calculate_CER(reference, predictions[i])
+                all_wer += calculate_WER(reference, predictions[i])
+
         avg_loss = total_loss / total_samples
-        return avg_loss
+        avg_cer = all_cer / total_samples
+        avg_wer = all_wer / total_samples
+        return avg_loss, avg_cer, avg_wer
 
 
 if __name__ == "__main__":
     criterion = torch.nn.CTCLoss(blank=0, reduction="mean", zero_infinity=True)
-    validation_loss = evaluate(model, validation_loader, criterion)
+    validation_loss, cer, wer = evaluate(model, validation_loader, criterion)
     print(f"Validation loss: {validation_loss:4f}")
+    print(f"CER: {cer:.4f}\n")
+    print(f"WER: {wer:.4f}\n")

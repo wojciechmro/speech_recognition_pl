@@ -1,0 +1,10 @@
+Vocabulary loaded from vocab.json
+Running script
+Filtered dataset to 6416 from 8895 samples.
+Warning: Character 'q' not in vocab_dict.
+Warning: Character 'š' not in vocab_dict.
+Validation loss: 1.588487
+CER: 0.4494
+
+WER: 1.0319
+
