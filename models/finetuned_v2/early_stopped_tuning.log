@@ -1,0 +1,374 @@
+/Users/wojciechmroczynski/Developer/pjatk/semestr_3/inl/projekt/speech_recognition_pl/myenv/lib/python3.10/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+Running script
+DatasetDict({
+    train: Dataset({
+        features: ['audioname', 'split', 'dataset', 'speaker_id', 'ref_orig', 'audio', 'audio_duration_samples', 'audio_duration_seconds', 'samplingrate_orig', 'sampling_rate', 'audiopath_bigos', 'audiopath_local', 'speaker_age', 'speaker_gender', 'utt_length_words', 'utt_length_chars', 'speech_rate_words', 'speech_rate_chars'],
+        num_rows: 10000
+    })
+    test: Dataset({
+        features: ['audioname', 'split', 'dataset', 'speaker_id', 'ref_orig', 'audio', 'audio_duration_samples', 'audio_duration_seconds', 'samplingrate_orig', 'sampling_rate', 'audiopath_bigos', 'audiopath_local', 'speaker_age', 'speaker_gender', 'utt_length_words', 'utt_length_chars', 'speech_rate_words', 'speech_rate_chars'],
+        num_rows: 500
+    })
+})
+Using device: mps
+/Users/wojciechmroczynski/Developer/pjatk/semestr_3/inl/projekt/speech_recognition_pl/myenv/lib/python3.10/site-packages/transformers/training_args.py:1545: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+max_steps is given, it will override any value given in num_train_epochs
+  0%|          | 1/4000 [00:01<1:54:24,  1.72s/it]
+{'loss': 3.4187, 'grad_norm': 467668.8125, 'learning_rate': 2e-08, 'epoch': 0.0}
+  1%|          | 25/4000 [00:24<59:40,  1.11it/s]  
+{'loss': 3.2326, 'grad_norm': 123.40486145019531, 'learning_rate': 5.000000000000001e-07, 'epoch': 0.02}
+  1%|▏         | 50/4000 [00:46<59:19,  1.11it/s]  
+{'loss': 2.5995, 'grad_norm': 36.957855224609375, 'learning_rate': 1.0000000000000002e-06, 'epoch': 0.04}
+  2%|▏         | 75/4000 [01:09<57:57,  1.13it/s]  
+{'loss': 1.9208, 'grad_norm': 24.282360076904297, 'learning_rate': 1.5e-06, 'epoch': 0.06}
+  2%|▎         | 100/4000 [01:31<57:26,  1.13it/s]
+{'loss': 1.5033, 'grad_norm': 35.81451416015625, 'learning_rate': 2.0000000000000003e-06, 'epoch': 0.08}
+  3%|▎         | 125/4000 [01:53<56:48,  1.14it/s]
+{'loss': 1.1606, 'grad_norm': 28.609088897705078, 'learning_rate': 2.5e-06, 'epoch': 0.1}
+  4%|▍         | 150/4000 [02:15<56:47,  1.13it/s]
+{'loss': 0.86, 'grad_norm': 21.91037940979004, 'learning_rate': 3e-06, 'epoch': 0.12}
+  4%|▍         | 175/4000 [02:37<55:48,  1.14it/s]
+{'loss': 0.7014, 'grad_norm': 18.45692253112793, 'learning_rate': 3.5e-06, 'epoch': 0.14}
+  5%|▌         | 200/4000 [02:59<55:20,  1.14it/s]
+{'loss': 0.6702, 'grad_norm': 17.005327224731445, 'learning_rate': 4.000000000000001e-06, 'epoch': 0.16}
+  6%|▌         | 225/4000 [03:21<56:34,  1.11it/s]
+{'loss': 0.7186, 'grad_norm': 17.856464385986328, 'learning_rate': 4.5e-06, 'epoch': 0.18}
+  6%|▋         | 250/4000 [03:43<54:51,  1.14it/s]
+{'loss': 0.634, 'grad_norm': 19.542919158935547, 'learning_rate': 5e-06, 'epoch': 0.2}
+  7%|▋         | 275/4000 [04:05<55:07,  1.13it/s]
+{'loss': 0.6391, 'grad_norm': 23.936382293701172, 'learning_rate': 5.500000000000001e-06, 'epoch': 0.22}
+  8%|▊         | 300/4000 [04:27<53:53,  1.14it/s]
+{'loss': 0.6191, 'grad_norm': 19.422319412231445, 'learning_rate': 6e-06, 'epoch': 0.24}
+  8%|▊         | 325/4000 [04:49<54:00,  1.13it/s]
+{'loss': 0.5948, 'grad_norm': 24.1851863861084, 'learning_rate': 6.5000000000000004e-06, 'epoch': 0.26}
+  9%|▉         | 350/4000 [05:11<53:26,  1.14it/s]
+{'loss': 0.6106, 'grad_norm': 20.4638614654541, 'learning_rate': 7e-06, 'epoch': 0.28}
+  9%|▉         | 375/4000 [05:33<53:41,  1.13it/s]
+{'loss': 0.6049, 'grad_norm': 17.41803741455078, 'learning_rate': 7.500000000000001e-06, 'epoch': 0.3}
+ 10%|█         | 400/4000 [05:55<52:41,  1.14it/s]
+{'loss': 0.6377, 'grad_norm': 21.575801849365234, 'learning_rate': 8.000000000000001e-06, 'epoch': 0.32}
+ 11%|█         | 425/4000 [06:17<52:45,  1.13it/s]
+{'loss': 0.5643, 'grad_norm': 20.997751235961914, 'learning_rate': 8.5e-06, 'epoch': 0.34}
+ 11%|█▏        | 450/4000 [06:39<51:53,  1.14it/s]
+{'loss': 0.5989, 'grad_norm': 21.382030487060547, 'learning_rate': 9e-06, 'epoch': 0.36}
+ 12%|█▏        | 475/4000 [07:01<51:39,  1.14it/s]
+{'loss': 0.5345, 'grad_norm': 14.235311508178711, 'learning_rate': 9.5e-06, 'epoch': 0.38}
+ 12%|█▎        | 500/4000 [07:23<51:10,  1.14it/s]
+{'loss': 0.5727, 'grad_norm': 15.906227111816406, 'learning_rate': 1e-05, 'epoch': 0.4}
+Due to a bug fix in https://github.com/huggingface/transformers/pull/28687 transcription using a multilingual Whisper will default to language detection followed by transcription instead of translation to English.This might be a breaking change for your use case. If you want to instead always translate your audio to English, make sure to pass `language='en'`.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+
+Processing batch of 500 predictions...
+                                                  
+ 12%|█▎        | 500/4000 [09:40<51:10,  1.14it/s]
+Filtered out 0 empty references
+Sample prediction: Zobaczyła jego wywróconę oczy i połyskujące białka...
+Sample reference: Zobaczyła jego wywrócone oczy i połyskujące białka....
+Current WER: 82.6475
+{'eval_loss': 0.6577857732772827, 'eval_wer_ortho': 82.64749628160635, 'eval_wer': 64.11088911088912, 'eval_runtime': 137.03, 'eval_samples_per_second': 3.649, 'eval_steps_per_second': 0.912, 'epoch': 0.4}
+/Users/wojciechmroczynski/Developer/pjatk/semestr_3/inl/projekt/speech_recognition_pl/myenv/lib/python3.10/site-packages/transformers/modeling_utils.py:2618: UserWarning: Moving the following attributes in the config to the generation config: {'max_length': 448, 'suppress_tokens': [1, 2, 7, 8, 9, 10, 14, 25, 26, 27, 28, 29, 31, 58, 59, 60, 61, 62, 63, 90, 91, 92, 93, 359, 503, 522, 542, 873, 893, 902, 918, 922, 931, 1350, 1853, 1982, 2460, 2627, 3246, 3253, 3268, 3536, 3846, 3961, 4183, 4667, 6585, 6647, 7273, 9061, 9383, 10428, 10929, 11938, 12033, 12331, 12562, 13793, 14157, 14635, 15265, 15618, 16553, 16604, 18362, 18956, 20075, 21675, 22520, 26130, 26161, 26435, 28279, 29464, 31650, 32302, 32470, 36865, 42863, 47425, 49870, 50254, 50258, 50358, 50359, 50360, 50361, 50362], 'begin_suppress_tokens': [220, 50257]}. You are seeing this warning because you've set generation parameters in the model config, as opposed to in the generation config.
+  warnings.warn(
+ 13%|█▎        | 525/4000 [10:03<51:19,  1.13it/s]   
+{'loss': 0.5703, 'grad_norm': 18.395368576049805, 'learning_rate': 1e-05, 'epoch': 0.42}
+ 14%|█▍        | 550/4000 [10:25<50:40,  1.13it/s]
+{'loss': 0.5574, 'grad_norm': 20.704538345336914, 'learning_rate': 1e-05, 'epoch': 0.44}
+ 14%|█▍        | 575/4000 [10:47<51:04,  1.12it/s]
+{'loss': 0.5771, 'grad_norm': 19.45375633239746, 'learning_rate': 1e-05, 'epoch': 0.46}
+ 15%|█▌        | 600/4000 [11:09<49:40,  1.14it/s]
+{'loss': 0.5275, 'grad_norm': 17.155574798583984, 'learning_rate': 1e-05, 'epoch': 0.48}
+ 16%|█▌        | 625/4000 [11:31<49:49,  1.13it/s]
+{'loss': 0.5557, 'grad_norm': 21.653324127197266, 'learning_rate': 1e-05, 'epoch': 0.5}
+ 16%|█▋        | 650/4000 [11:53<49:09,  1.14it/s]
+{'loss': 0.4816, 'grad_norm': 18.936059951782227, 'learning_rate': 1e-05, 'epoch': 0.52}
+ 17%|█▋        | 675/4000 [12:15<48:44,  1.14it/s]
+{'loss': 0.5301, 'grad_norm': 15.713991165161133, 'learning_rate': 1e-05, 'epoch': 0.54}
+ 18%|█▊        | 700/4000 [12:37<48:14,  1.14it/s]
+{'loss': 0.4929, 'grad_norm': 16.79250717163086, 'learning_rate': 1e-05, 'epoch': 0.56}
+ 18%|█▊        | 725/4000 [12:59<48:52,  1.12it/s]
+{'loss': 0.5182, 'grad_norm': 17.042930603027344, 'learning_rate': 1e-05, 'epoch': 0.58}
+ 19%|█▉        | 750/4000 [13:21<47:23,  1.14it/s]
+{'loss': 0.5239, 'grad_norm': 24.23729705810547, 'learning_rate': 1e-05, 'epoch': 0.6}
+ 19%|█▉        | 775/4000 [13:44<47:43,  1.13it/s]
+{'loss': 0.5204, 'grad_norm': 21.546876907348633, 'learning_rate': 1e-05, 'epoch': 0.62}
+ 20%|██        | 800/4000 [14:06<46:44,  1.14it/s]
+{'loss': 0.5218, 'grad_norm': 19.057571411132812, 'learning_rate': 1e-05, 'epoch': 0.64}
+ 21%|██        | 825/4000 [14:28<46:18,  1.14it/s]
+{'loss': 0.5173, 'grad_norm': 23.775175094604492, 'learning_rate': 1e-05, 'epoch': 0.66}
+ 21%|██▏       | 850/4000 [14:50<46:45,  1.12it/s]
+{'loss': 0.5391, 'grad_norm': 25.190507888793945, 'learning_rate': 1e-05, 'epoch': 0.68}
+ 22%|██▏       | 875/4000 [15:12<45:47,  1.14it/s]
+{'loss': 0.4864, 'grad_norm': 18.04981231689453, 'learning_rate': 1e-05, 'epoch': 0.7}
+ 22%|██▎       | 900/4000 [15:34<45:31,  1.14it/s]
+{'loss': 0.5475, 'grad_norm': 16.945035934448242, 'learning_rate': 1e-05, 'epoch': 0.72}
+ 23%|██▎       | 925/4000 [15:56<45:03,  1.14it/s]
+{'loss': 0.5161, 'grad_norm': 15.756280899047852, 'learning_rate': 1e-05, 'epoch': 0.74}
+ 24%|██▍       | 950/4000 [16:18<44:40,  1.14it/s]
+{'loss': 0.5063, 'grad_norm': 13.603504180908203, 'learning_rate': 1e-05, 'epoch': 0.76}
+ 24%|██▍       | 975/4000 [16:40<44:15,  1.14it/s]
+{'loss': 0.4916, 'grad_norm': 17.68210220336914, 'learning_rate': 1e-05, 'epoch': 0.78}
+ 25%|██▌       | 1000/4000 [17:02<44:03,  1.13it/s]
+{'loss': 0.5401, 'grad_norm': 24.395532608032227, 'learning_rate': 1e-05, 'epoch': 0.8}
+
+Processing batch of 500 predictions...
+                                                   
+ 25%|██▌       | 1000/4000 [19:02<44:03,  1.13it/s]
+Filtered out 0 empty references
+Sample prediction: Zobaczyła jego wywróconę oczy i połyskujące białka....
+Sample reference: Zobaczyła jego wywrócone oczy i połyskujące białka....
+Current WER: 83.9118
+{'eval_loss': 0.5978144407272339, 'eval_wer_ortho': 83.91175012394646, 'eval_wer': 76.14885114885115, 'eval_runtime': 119.684, 'eval_samples_per_second': 4.178, 'eval_steps_per_second': 1.044, 'epoch': 0.8}
+ 26%|██▌       | 1025/4000 [19:24<44:02,  1.13it/s]   
+{'loss': 0.5324, 'grad_norm': 18.476682662963867, 'learning_rate': 1e-05, 'epoch': 0.82}
+ 26%|██▋       | 1050/4000 [19:47<43:52,  1.12it/s]
+{'loss': 0.5141, 'grad_norm': 16.622373580932617, 'learning_rate': 1e-05, 'epoch': 0.84}
+ 27%|██▋       | 1075/4000 [20:09<42:47,  1.14it/s]
+{'loss': 0.4781, 'grad_norm': 17.17029571533203, 'learning_rate': 1e-05, 'epoch': 0.86}
+ 28%|██▊       | 1100/4000 [20:31<42:33,  1.14it/s]
+{'loss': 0.5115, 'grad_norm': 14.282564163208008, 'learning_rate': 1e-05, 'epoch': 0.88}
+ 28%|██▊       | 1125/4000 [20:53<42:46,  1.12it/s]
+{'loss': 0.477, 'grad_norm': 15.304662704467773, 'learning_rate': 1e-05, 'epoch': 0.9}
+ 29%|██▉       | 1150/4000 [21:15<43:03,  1.10it/s]
+{'loss': 0.4986, 'grad_norm': 21.47730827331543, 'learning_rate': 1e-05, 'epoch': 0.92}
+ 29%|██▉       | 1175/4000 [21:37<41:39,  1.13it/s]
+{'loss': 0.4828, 'grad_norm': 16.059249877929688, 'learning_rate': 1e-05, 'epoch': 0.94}
+ 30%|███       | 1200/4000 [21:59<41:16,  1.13it/s]
+{'loss': 0.4654, 'grad_norm': 15.181514739990234, 'learning_rate': 1e-05, 'epoch': 0.96}
+ 31%|███       | 1225/4000 [22:21<40:34,  1.14it/s]
+{'loss': 0.465, 'grad_norm': 20.76776885986328, 'learning_rate': 1e-05, 'epoch': 0.98}
+ 31%|███▏      | 1250/4000 [22:43<35:51,  1.28it/s]
+{'loss': 0.4976, 'grad_norm': 16.75377655029297, 'learning_rate': 1e-05, 'epoch': 1.0}
+ 32%|███▏      | 1275/4000 [23:05<40:34,  1.12it/s]
+{'loss': 0.3588, 'grad_norm': 18.844409942626953, 'learning_rate': 1e-05, 'epoch': 1.02}
+ 32%|███▎      | 1300/4000 [23:27<39:02,  1.15it/s]
+{'loss': 0.3774, 'grad_norm': 15.54991626739502, 'learning_rate': 1e-05, 'epoch': 1.04}
+ 33%|███▎      | 1325/4000 [23:49<38:50,  1.15it/s]
+{'loss': 0.3527, 'grad_norm': 15.358990669250488, 'learning_rate': 1e-05, 'epoch': 1.06}
+ 34%|███▍      | 1350/4000 [24:11<38:38,  1.14it/s]
+{'loss': 0.3404, 'grad_norm': 12.816086769104004, 'learning_rate': 1e-05, 'epoch': 1.08}
+ 34%|███▍      | 1375/4000 [24:33<38:34,  1.13it/s]
+{'loss': 0.4006, 'grad_norm': 21.935117721557617, 'learning_rate': 1e-05, 'epoch': 1.1}
+ 35%|███▌      | 1400/4000 [24:55<38:14,  1.13it/s]
+{'loss': 0.3977, 'grad_norm': 19.80529022216797, 'learning_rate': 1e-05, 'epoch': 1.12}
+ 36%|███▌      | 1425/4000 [25:17<37:35,  1.14it/s]
+{'loss': 0.3826, 'grad_norm': 15.51056957244873, 'learning_rate': 1e-05, 'epoch': 1.14}
+ 36%|███▋      | 1450/4000 [25:39<36:48,  1.15it/s]
+{'loss': 0.3712, 'grad_norm': 21.508556365966797, 'learning_rate': 1e-05, 'epoch': 1.16}
+ 37%|███▋      | 1475/4000 [26:01<37:28,  1.12it/s]
+{'loss': 0.3428, 'grad_norm': 12.450088500976562, 'learning_rate': 1e-05, 'epoch': 1.18}
+ 38%|███▊      | 1500/4000 [26:24<36:56,  1.13it/s]
+{'loss': 0.3892, 'grad_norm': 18.689260482788086, 'learning_rate': 1e-05, 'epoch': 1.2}
+
+Processing batch of 500 predictions...
+                                                   
+ 38%|███▊      | 1500/4000 [28:31<36:56,  1.13it/s]
+Filtered out 0 empty references
+Sample prediction: Zobaczyła jego wywróconę oczy i połyskujące białka....
+Sample reference: Zobaczyła jego wywrócone oczy i połyskujące białka....
+Current WER: 73.8721
+{'eval_loss': 0.5812260508537292, 'eval_wer_ortho': 73.8720872583044, 'eval_wer': 69.7052947052947, 'eval_runtime': 127.3196, 'eval_samples_per_second': 3.927, 'eval_steps_per_second': 0.982, 'epoch': 1.2}
+ 38%|███▊      | 1525/4000 [28:54<36:24,  1.13it/s]   
+{'loss': 0.4009, 'grad_norm': 17.96177101135254, 'learning_rate': 1e-05, 'epoch': 1.22}
+ 39%|███▉      | 1550/4000 [29:16<35:54,  1.14it/s]
+{'loss': 0.324, 'grad_norm': 10.518797874450684, 'learning_rate': 1e-05, 'epoch': 1.24}
+ 39%|███▉      | 1575/4000 [29:38<35:17,  1.14it/s]
+{'loss': 0.3794, 'grad_norm': 20.039867401123047, 'learning_rate': 1e-05, 'epoch': 1.26}
+ 40%|████      | 1600/4000 [30:00<36:09,  1.11it/s]
+{'loss': 0.3609, 'grad_norm': 17.476713180541992, 'learning_rate': 1e-05, 'epoch': 1.28}
+ 41%|████      | 1625/4000 [30:22<34:41,  1.14it/s]
+{'loss': 0.3883, 'grad_norm': 19.523452758789062, 'learning_rate': 1e-05, 'epoch': 1.3}
+ 41%|████▏     | 1650/4000 [30:44<34:44,  1.13it/s]
+{'loss': 0.3834, 'grad_norm': 15.790889739990234, 'learning_rate': 1e-05, 'epoch': 1.32}
+ 42%|████▏     | 1675/4000 [31:07<34:07,  1.14it/s]
+{'loss': 0.3527, 'grad_norm': 17.12042808532715, 'learning_rate': 1e-05, 'epoch': 1.34}
+ 42%|████▎     | 1700/4000 [31:29<33:56,  1.13it/s]
+{'loss': 0.34, 'grad_norm': 14.831578254699707, 'learning_rate': 1e-05, 'epoch': 1.36}
+ 43%|████▎     | 1725/4000 [31:51<33:23,  1.14it/s]
+{'loss': 0.3794, 'grad_norm': 374.7723693847656, 'learning_rate': 1e-05, 'epoch': 1.38}
+ 44%|████▍     | 1750/4000 [32:13<33:05,  1.13it/s]
+{'loss': 0.4194, 'grad_norm': 16.41282844543457, 'learning_rate': 1e-05, 'epoch': 1.4}
+ 44%|████▍     | 1775/4000 [32:36<33:13,  1.12it/s]
+{'loss': 0.3619, 'grad_norm': 11.817911148071289, 'learning_rate': 1e-05, 'epoch': 1.42}
+ 45%|████▌     | 1800/4000 [32:58<33:09,  1.11it/s]
+{'loss': 0.3459, 'grad_norm': 18.542800903320312, 'learning_rate': 1e-05, 'epoch': 1.44}
+ 46%|████▌     | 1825/4000 [33:20<32:19,  1.12it/s]
+{'loss': 0.3363, 'grad_norm': 12.841354370117188, 'learning_rate': 1e-05, 'epoch': 1.46}
+ 46%|████▋     | 1850/4000 [33:43<31:58,  1.12it/s]
+{'loss': 0.3566, 'grad_norm': 12.709946632385254, 'learning_rate': 1e-05, 'epoch': 1.48}
+ 47%|████▋     | 1875/4000 [34:05<31:43,  1.12it/s]
+{'loss': 0.3767, 'grad_norm': 16.388263702392578, 'learning_rate': 1e-05, 'epoch': 1.5}
+ 48%|████▊     | 1900/4000 [34:27<31:57,  1.10it/s]
+{'loss': 0.3179, 'grad_norm': 10.687088966369629, 'learning_rate': 1e-05, 'epoch': 1.52}
+ 48%|████▊     | 1925/4000 [34:50<30:43,  1.13it/s]
+{'loss': 0.333, 'grad_norm': 16.09160614013672, 'learning_rate': 1e-05, 'epoch': 1.54}
+ 49%|████▉     | 1950/4000 [35:12<30:13,  1.13it/s]
+{'loss': 0.3508, 'grad_norm': 19.95355796813965, 'learning_rate': 1e-05, 'epoch': 1.56}
+ 49%|████▉     | 1975/4000 [35:34<30:29,  1.11it/s]
+{'loss': 0.3698, 'grad_norm': 15.256917953491211, 'learning_rate': 1e-05, 'epoch': 1.58}
+ 50%|█████     | 2000/4000 [35:56<29:43,  1.12it/s]
+{'loss': 0.3526, 'grad_norm': 13.379030227661133, 'learning_rate': 1e-05, 'epoch': 1.6}
+
+Processing batch of 500 predictions...
+                                                   
+ 50%|█████     | 2000/4000 [38:02<29:43,  1.12it/s]
+Filtered out 0 empty references
+Sample prediction: Zobaczyła jego wywróconę oczy i połyskujące białka....
+Sample reference: Zobaczyła jego wywrócone oczy i połyskujące białka....
+Current WER: 61.6262
+{'eval_loss': 0.5777879357337952, 'eval_wer_ortho': 61.62617749132375, 'eval_wer': 50.8991008991009, 'eval_runtime': 126.2346, 'eval_samples_per_second': 3.961, 'eval_steps_per_second': 0.99, 'epoch': 1.6}
+ 51%|█████     | 2025/4000 [38:25<29:05,  1.13it/s]   
+{'loss': 0.3786, 'grad_norm': 19.27045249938965, 'learning_rate': 1e-05, 'epoch': 1.62}
+ 51%|█████▏    | 2050/4000 [38:47<28:30,  1.14it/s]
+{'loss': 0.3681, 'grad_norm': 16.548948287963867, 'learning_rate': 1e-05, 'epoch': 1.64}
+ 52%|█████▏    | 2075/4000 [39:09<28:36,  1.12it/s]
+{'loss': 0.3252, 'grad_norm': 14.323250770568848, 'learning_rate': 1e-05, 'epoch': 1.66}
+ 52%|█████▎    | 2100/4000 [39:31<27:27,  1.15it/s]
+{'loss': 0.3612, 'grad_norm': 14.920071601867676, 'learning_rate': 1e-05, 'epoch': 1.68}
+ 53%|█████▎    | 2125/4000 [39:53<27:16,  1.15it/s]
+{'loss': 0.3653, 'grad_norm': 13.379945755004883, 'learning_rate': 1e-05, 'epoch': 1.7}
+ 54%|█████▍    | 2150/4000 [40:15<27:04,  1.14it/s]
+{'loss': 0.3434, 'grad_norm': 17.82370376586914, 'learning_rate': 1e-05, 'epoch': 1.72}
+ 54%|█████▍    | 2175/4000 [40:37<26:40,  1.14it/s]
+{'loss': 0.3628, 'grad_norm': 25.634037017822266, 'learning_rate': 1e-05, 'epoch': 1.74}
+ 55%|█████▌    | 2200/4000 [40:59<26:25,  1.14it/s]
+{'loss': 0.3486, 'grad_norm': 14.364730834960938, 'learning_rate': 1e-05, 'epoch': 1.76}
+ 56%|█████▌    | 2225/4000 [41:21<25:47,  1.15it/s]
+{'loss': 0.3377, 'grad_norm': 13.407089233398438, 'learning_rate': 1e-05, 'epoch': 1.78}
+ 56%|█████▋    | 2250/4000 [41:42<25:27,  1.15it/s]
+{'loss': 0.3391, 'grad_norm': 13.294289588928223, 'learning_rate': 1e-05, 'epoch': 1.8}
+ 57%|█████▋    | 2275/4000 [42:05<25:37,  1.12it/s]
+{'loss': 0.3539, 'grad_norm': 15.222535133361816, 'learning_rate': 1e-05, 'epoch': 1.82}
+ 57%|█████▊    | 2300/4000 [42:27<24:30,  1.16it/s]
+{'loss': 0.3252, 'grad_norm': 19.285037994384766, 'learning_rate': 1e-05, 'epoch': 1.84}
+ 58%|█████▊    | 2325/4000 [42:49<25:56,  1.08it/s]
+{'loss': 0.3723, 'grad_norm': 16.529945373535156, 'learning_rate': 1e-05, 'epoch': 1.86}
+ 59%|█████▉    | 2350/4000 [43:11<24:13,  1.14it/s]
+{'loss': 0.3597, 'grad_norm': 22.4454402923584, 'learning_rate': 1e-05, 'epoch': 1.88}
+ 59%|█████▉    | 2375/4000 [43:33<23:42,  1.14it/s]
+{'loss': 0.3813, 'grad_norm': 22.523487091064453, 'learning_rate': 1e-05, 'epoch': 1.9}
+ 60%|██████    | 2400/4000 [43:55<23:27,  1.14it/s]
+{'loss': 0.3751, 'grad_norm': 21.284420013427734, 'learning_rate': 1e-05, 'epoch': 1.92}
+ 61%|██████    | 2425/4000 [44:17<22:59,  1.14it/s]
+{'loss': 0.3691, 'grad_norm': 15.011286735534668, 'learning_rate': 1e-05, 'epoch': 1.94}
+ 61%|██████▏   | 2450/4000 [44:40<22:53,  1.13it/s]
+{'loss': 0.3352, 'grad_norm': 24.618940353393555, 'learning_rate': 1e-05, 'epoch': 1.96}
+ 62%|██████▏   | 2475/4000 [45:01<22:05,  1.15it/s]
+{'loss': 0.3778, 'grad_norm': 14.037487983703613, 'learning_rate': 1e-05, 'epoch': 1.98}
+ 62%|██████▎   | 2500/4000 [45:23<19:02,  1.31it/s]
+{'loss': 0.3621, 'grad_norm': 21.067399978637695, 'learning_rate': 1e-05, 'epoch': 2.0}
+
+Processing batch of 500 predictions...
+                                                   
+ 62%|██████▎   | 2500/4000 [47:29<19:02,  1.31it/s]
+Filtered out 0 empty references
+Sample prediction: Zobaczyła jego wywróconę oczy i połyskujące białka....
+Sample reference: Zobaczyła jego wywrócone oczy i połyskujące białka....
+Current WER: 57.8830
+{'eval_loss': 0.5458288788795471, 'eval_wer_ortho': 57.882994546355974, 'eval_wer': 52.522477522477516, 'eval_runtime': 125.8646, 'eval_samples_per_second': 3.973, 'eval_steps_per_second': 0.993, 'epoch': 2.0}
+ 63%|██████▎   | 2525/4000 [47:52<21:35,  1.14it/s]   
+{'loss': 0.2454, 'grad_norm': 13.063681602478027, 'learning_rate': 1e-05, 'epoch': 2.02}
+ 64%|██████▍   | 2550/4000 [48:14<21:18,  1.13it/s]
+{'loss': 0.2367, 'grad_norm': 15.858158111572266, 'learning_rate': 1e-05, 'epoch': 2.04}
+ 64%|██████▍   | 2575/4000 [48:36<20:45,  1.14it/s]
+{'loss': 0.2672, 'grad_norm': 11.992547988891602, 'learning_rate': 1e-05, 'epoch': 2.06}
+ 65%|██████▌   | 2600/4000 [48:58<20:20,  1.15it/s]
+{'loss': 0.2461, 'grad_norm': 16.817073822021484, 'learning_rate': 1e-05, 'epoch': 2.08}
+ 66%|██████▌   | 2625/4000 [49:20<20:00,  1.15it/s]
+{'loss': 0.2455, 'grad_norm': 13.020140647888184, 'learning_rate': 1e-05, 'epoch': 2.1}
+ 66%|██████▋   | 2650/4000 [49:42<19:40,  1.14it/s]
+{'loss': 0.2506, 'grad_norm': 11.804232597351074, 'learning_rate': 1e-05, 'epoch': 2.12}
+ 67%|██████▋   | 2675/4000 [50:05<19:12,  1.15it/s]
+{'loss': 0.2334, 'grad_norm': 15.03752613067627, 'learning_rate': 1e-05, 'epoch': 2.14}
+ 68%|██████▊   | 2700/4000 [50:27<18:47,  1.15it/s]
+{'loss': 0.2468, 'grad_norm': 12.39890193939209, 'learning_rate': 1e-05, 'epoch': 2.16}
+ 68%|██████▊   | 2725/4000 [50:49<18:39,  1.14it/s]
+{'loss': 0.2597, 'grad_norm': 17.53315544128418, 'learning_rate': 1e-05, 'epoch': 2.18}
+ 69%|██████▉   | 2750/4000 [51:11<18:23,  1.13it/s]
+{'loss': 0.2374, 'grad_norm': 11.774201393127441, 'learning_rate': 1e-05, 'epoch': 2.2}
+ 69%|██████▉   | 2775/4000 [51:33<17:52,  1.14it/s]
+{'loss': 0.278, 'grad_norm': 22.337875366210938, 'learning_rate': 1e-05, 'epoch': 2.22}
+ 70%|███████   | 2800/4000 [51:55<17:36,  1.14it/s]
+{'loss': 0.2667, 'grad_norm': 21.757755279541016, 'learning_rate': 1e-05, 'epoch': 2.24}
+ 71%|███████   | 2825/4000 [52:17<17:15,  1.13it/s]
+{'loss': 0.2654, 'grad_norm': 16.470491409301758, 'learning_rate': 1e-05, 'epoch': 2.26}
+ 71%|███████▏  | 2850/4000 [52:39<17:04,  1.12it/s]
+{'loss': 0.2487, 'grad_norm': 16.708498001098633, 'learning_rate': 1e-05, 'epoch': 2.28}
+ 72%|███████▏  | 2875/4000 [53:01<16:22,  1.15it/s]
+{'loss': 0.2483, 'grad_norm': 14.288700103759766, 'learning_rate': 1e-05, 'epoch': 2.3}
+ 72%|███████▎  | 2900/4000 [53:23<16:05,  1.14it/s]
+{'loss': 0.2652, 'grad_norm': 2000.0821533203125, 'learning_rate': 1e-05, 'epoch': 2.32}
+ 73%|███████▎  | 2925/4000 [53:45<16:07,  1.11it/s]
+{'loss': 0.2696, 'grad_norm': 15.162543296813965, 'learning_rate': 1e-05, 'epoch': 2.34}
+ 74%|███████▍  | 2950/4000 [54:07<15:22,  1.14it/s]
+{'loss': 0.2646, 'grad_norm': 12.173604011535645, 'learning_rate': 1e-05, 'epoch': 2.36}
+ 74%|███████▍  | 2975/4000 [54:29<14:54,  1.15it/s]
+{'loss': 0.2614, 'grad_norm': 23.512434005737305, 'learning_rate': 1e-05, 'epoch': 2.38}
+ 75%|███████▌  | 3000/4000 [54:51<14:32,  1.15it/s]
+{'loss': 0.2398, 'grad_norm': 18.161157608032227, 'learning_rate': 1e-05, 'epoch': 2.4}
+
+Processing batch of 500 predictions...
+                                                   
+ 75%|███████▌  | 3000/4000 [57:31<14:32,  1.15it/s]
+Filtered out 0 empty references
+Sample prediction: Zobaczyła jego wywróconę oczy i połyskujące białka....
+Sample reference: Zobaczyła jego wywrócone oczy i połyskujące białka....
+Current WER: 113.4854
+{'eval_loss': 0.5717935562133789, 'eval_wer_ortho': 113.4853743182945, 'eval_wer': 110.68931068931069, 'eval_runtime': 159.896, 'eval_samples_per_second': 3.127, 'eval_steps_per_second': 0.782, 'epoch': 2.4}
+ 76%|███████▌  | 3025/4000 [57:54<14:24,  1.13it/s]   
+{'loss': 0.2412, 'grad_norm': 18.96308135986328, 'learning_rate': 1e-05, 'epoch': 2.42}
+ 76%|███████▋  | 3050/4000 [58:16<14:10,  1.12it/s]
+{'loss': 0.2668, 'grad_norm': 15.122139930725098, 'learning_rate': 1e-05, 'epoch': 2.44}
+ 77%|███████▋  | 3075/4000 [58:38<13:36,  1.13it/s]
+{'loss': 0.2852, 'grad_norm': 13.384448051452637, 'learning_rate': 1e-05, 'epoch': 2.46}
+ 78%|███████▊  | 3100/4000 [59:00<13:24,  1.12it/s]
+{'loss': 0.2667, 'grad_norm': 15.577255249023438, 'learning_rate': 1e-05, 'epoch': 2.48}
+ 78%|███████▊  | 3125/4000 [59:22<12:43,  1.15it/s]
+{'loss': 0.2414, 'grad_norm': 20.293100357055664, 'learning_rate': 1e-05, 'epoch': 2.5}
+ 79%|███████▉  | 3150/4000 [59:44<12:24,  1.14it/s]
+{'loss': 0.2564, 'grad_norm': 30.711204528808594, 'learning_rate': 1e-05, 'epoch': 2.52}
+ 79%|███████▉  | 3175/4000 [1:00:06<12:14,  1.12it/s]
+{'loss': 0.2763, 'grad_norm': 18.641937255859375, 'learning_rate': 1e-05, 'epoch': 2.54}
+ 80%|████████  | 3200/4000 [1:00:28<11:38,  1.15it/s]
+{'loss': 0.2462, 'grad_norm': 129228.28125, 'learning_rate': 1e-05, 'epoch': 2.56}
+ 81%|████████  | 3225/4000 [1:00:50<11:14,  1.15it/s]
+{'loss': 0.2401, 'grad_norm': 17.347637176513672, 'learning_rate': 1e-05, 'epoch': 2.58}
+ 81%|████████▏ | 3250/4000 [1:01:12<11:05,  1.13it/s]
+{'loss': 0.2773, 'grad_norm': 23.6445369720459, 'learning_rate': 1e-05, 'epoch': 2.6}
+ 82%|████████▏ | 3275/4000 [1:01:34<10:47,  1.12it/s]
+{'loss': 0.2746, 'grad_norm': 26.375463485717773, 'learning_rate': 1e-05, 'epoch': 2.62}
+ 82%|████████▎ | 3300/4000 [1:01:56<10:15,  1.14it/s]
+{'loss': 0.2865, 'grad_norm': 20.906789779663086, 'learning_rate': 1e-05, 'epoch': 2.64}
+ 83%|████████▎ | 3325/4000 [1:02:18<09:53,  1.14it/s]
+{'loss': 0.2923, 'grad_norm': 17.974159240722656, 'learning_rate': 1e-05, 'epoch': 2.66}
+ 84%|████████▍ | 3350/4000 [1:02:40<09:32,  1.14it/s]
+{'loss': 0.2662, 'grad_norm': 18.314977645874023, 'learning_rate': 1e-05, 'epoch': 2.68}
+ 84%|████████▍ | 3375/4000 [1:03:02<09:03,  1.15it/s]
+{'loss': 0.2752, 'grad_norm': 25.421669006347656, 'learning_rate': 1e-05, 'epoch': 2.7}
+ 85%|████████▌ | 3400/4000 [1:03:24<08:49,  1.13it/s]
+{'loss': 0.2841, 'grad_norm': 13.835807800292969, 'learning_rate': 1e-05, 'epoch': 2.72}
+ 86%|████████▌ | 3425/4000 [1:03:46<08:27,  1.13it/s]
+{'loss': 0.2454, 'grad_norm': 21.868183135986328, 'learning_rate': 1e-05, 'epoch': 2.74}
+ 86%|████████▋ | 3450/4000 [1:04:08<08:06,  1.13it/s]
+{'loss': 0.2644, 'grad_norm': 12.959365844726562, 'learning_rate': 1e-05, 'epoch': 2.76}
+ 87%|████████▋ | 3475/4000 [1:04:31<07:49,  1.12it/s]
+{'loss': 0.2432, 'grad_norm': 14.905562400817871, 'learning_rate': 1e-05, 'epoch': 2.78}
+ 88%|████████▊ | 3500/4000 [1:04:53<07:24,  1.12it/s]
+{'loss': 0.2699, 'grad_norm': 20.418649673461914, 'learning_rate': 1e-05, 'epoch': 2.8}
+
+Processing batch of 500 predictions...
+                                                     
+ 88%|████████▊ | 3500/4000 [1:07:09<07:24,  1.12it/s]
+Filtered out 0 empty references
+Sample prediction: Zobaczyła jego wywróczone oczy i połyskujące białka....
+Sample reference: Zobaczyła jego wywrócone oczy i połyskujące białka....
+Current WER: 71.8889
+{'eval_loss': 0.5646761655807495, 'eval_wer_ortho': 71.88894397620228, 'eval_wer': 66.25874125874127, 'eval_runtime': 136.0276, 'eval_samples_per_second': 3.676, 'eval_steps_per_second': 0.919, 'epoch': 2.8}
+There were missing keys in the checkpoint model loaded: ['proj_out.weight'].
+ 88%|████████▊ | 3500/4000 [1:07:10<09:35,  1.15s/it]
+{'train_runtime': 4030.4946, 'train_samples_per_second': 7.939, 'train_steps_per_second': 0.992, 'train_loss': 0.45635443033490863, 'epoch': 2.8}
+Filter: 100%|██████████| 500/500 [00:00<00:00, 632.47 examples/s]
+Passing a tuple of `past_key_values` is deprecated and will be removed in Transformers v4.43.0. You should pass an instance of `EncoderDecoderCache` instead, e.g. `past_key_values=EncoderDecoderCache.from_legacy_cache(past_key_values)`.
+Fine-tuned model WER: 1.25%
+Original model WER: 0.63%
+The original Whisper model performs better than the fine-tuned model.

@@ -1,5 +1,8 @@
 __pycache__/
 venv/
+myenv/
+logs/
+whisper-tiny-pl/
 notes.md
 .DS_Store
 .venv/
