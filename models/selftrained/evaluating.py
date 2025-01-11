@@ -93,5 +93,5 @@ if __name__ == "__main__":
     criterion = torch.nn.CTCLoss(blank=0, reduction="mean", zero_infinity=True)
     validation_loss, cer, wer = evaluate(model, validation_loader, criterion)
     print(f"Validation loss: {validation_loss:4f}")
-    print(f"CER: {cer:.4f}\n")
-    print(f"WER: {wer:.4f}\n")
+    print(f"CER: {cer:.4f}")
+    print(f"WER: {wer:.4f}")
